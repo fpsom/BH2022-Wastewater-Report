@@ -110,15 +110,21 @@ For each of these workflows, we have identified the key phases involved (not inc
 
 Omics WW Surveillance System - specific target (e.g. single virus + variants) / amplicon based
 
-Nb      Step                                                      Objectives                                                           Actionable
------   ----                                                      ----------                                                           -----------
-**0**   RT-PCR                                                    Rough presence/absence of virus. Plus variants depending on probe.   Yes (basic)
-**1**   Sequencing                                                `FASTQ`/`FAST5` files - no further information                       No
-**2**   Alignment to reference (incl. host removal + cleaning)    `BAM` file.                                                          No
-**3**   Identify mutations                                        `VCF` files, list of mutations, pileups, etc                         No
-**4**   Detect variants based on definitions                      List of variants                                                     Yes (variant level)
-**5**   Quantify variants based on definitions                    List of variants with frequencies (should add up to 100% per sample) Yes (variant trends)
-**6**   Define new variants based on mutations                    List of mutations not mapping to known definitions                   Yes (emerging variants)
+Nb      Step                                         Objectives                           Actionable
+-----   ----                                         ----------                           -----------
+**0**   RT-PCR                                       Rough presence/absence of virus.     Yes (basic)
+                                                     Plus variants depending on probe.   
+**1**   Sequencing                                   `FASTQ`/`FAST5` files                No
+                                                      no further information
+**2**   Alignment to reference                       `BAM` file.                          No
+        (incl. host removal + cleaning)
+**3**   Identify mutations                           `VCF` files, list of mutations,      No
+                                                     pileups, etc
+**4**   Detect variants based on definitions         List of variants                     Yes (variant level)
+**5**   Quantify variants based on definitions       List of variants with frequencies    Yes (variant trends)
+                                                     (should add up to 100% per sample)
+**6**   Define new variants based on mutations       List of mutations not mapping        Yes (emerging variants)
+                                                     to known definitions
 
 
 ## Unknown target meta-genomics / -transcriptomics workflow
@@ -157,7 +163,7 @@ In order to have a better assessment of the landscape, it's important to be awar
 
 We identified 21 tools/workflow:
 
-Tool/Workflow name                    Targeted or Untargeted   	Scope    Corresponding step(s) of the workflow     Papers that used it
+Tool/Workflow name                    Targeted or Untargeted   	 Scope    Corresponding step(s) of the workflow    Papers that used it
 -------------------                   ----------------------     ------   -------------------------------------    --------------------
 Freyja                                                                                                             [@Karthikeyan2022], [@SolisMoreira2022], [@Karthikeyan2021], [Center for Food Safety and Applied Nutrition. "Wastewater Surveillance for SARS-CoV-2 Variants". FDA (Jan. 2022)](https://www.fda.gov/food/whole-genome-sequencing-wgs-program/wastewater-surveillance-sars-cov-2-variants)
 COJAC                                                                                                              [@Jahn2022], [@Karthikeyan2022], [JBC and Defra "Wastewater monitoring of SARS-CoV-2 variants in England: demonstration case study for Bristol (December 2020 to March 2021), 8 April 2021](https://www.gov.uk/government/publications/jbc-and-defra-wastewater-monitoring-of-sars-cov-2-variants-in-england-demonstration-case-study-for-bristol-december-2020-to-march-2021-8-april-20)
