@@ -177,11 +177,8 @@ In order to have a better assessment of the landscape, it's important to be awar
 
 We identified 21 tools/workflow:
 
--------------------------------------------------------------------------------------------------------
-Tool/Workflow                   Targeted    	       Scope    Corresponding        Papers that used it
-name                         or Untargeted                    step(s) of the
-                                                              workflow        
--------------------       ----------------------     ------   -----------------    --------------------
+Tool/Workflow name     Targeted or Untargeted   	Scope    Corresponding step(s) of the workflow      Papers that used it
+-------------------    ----------------------     ------   -------------------------------------      --------------------
 Freyja                                                                             [@Karthikeyan2022],
                                                                                    [@SolisMoreira2022],
                                                                                    [@Karthikeyan2021],
@@ -215,7 +212,6 @@ Mykrobe
 Pathofact
 ariba
 
--------------------------------------------------------------------------------------------------------
 
 # Discussion
 
