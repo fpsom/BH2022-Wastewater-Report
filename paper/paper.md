@@ -177,6 +177,28 @@ In order to have a better assessment of the landscape, it's important to be awar
 
 We identified 21 tools/workflow:
 
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+</table>
+
+
+
+
 Tool/Workflow name     Targeted/ Untargeted   	Scope    Workflow step(s)     Papers that used it
 -------------------    --------------------     ------   -----------------    --------------------
 Freyja                                                                        [@Karthikeyan2022],
