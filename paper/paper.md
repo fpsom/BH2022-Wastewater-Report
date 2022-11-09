@@ -177,12 +177,15 @@ In order to have a better assessment of the landscape, it's important to be awar
 
 We identified 21 tools/workflow:
 
-Tool/Workflow name     Targeted/ Untargeted   	Scope    Workflow step(s)     Papers that used it
--------------------    --------------------     ------   -----------------    --------------------
-Freyja                                                                        [@Karthikeyan2022],
-                                                                              [@SolisMoreira2022],
-                                                                              [@Karthikeyan2021],
-                                                                              [Center for Food Safety and Applied Nutrition."Wastewater Surveillance for SARS-CoV-2 Variants". FDA (Jan. 2022)](https://www.fda.gov/food/whole-genome-sequencing-wgs-program/wastewater-surveillance-sars-cov-2-variants)
+| Tool/Workflow name | Targeted / Untargeted | Scope | Workflow step(s) | Papers that used it |
+|--------------------|-----------------------|-------|------------------|---------------------|
+| Freyja             |                       |       |                  |  [@Karthikeyan2022], [@SolisMoreira2022], [@Karthikeyan2021], [Center for Food Safety and Applied Nutrition."Wastewater Surveillance for SARS-CoV-2 Variants". FDA (Jan. 2022)](https://www.fda.gov/food/whole-genome-sequencing-wgs-program/wastewater-surveillance-sars-cov-2-variants) |
+
+
+
+
+
+
 COJAC                                                                         [@Jahn2022],
                                                                               [@Karthikeyan2022], [JBC and Defra "Wastewater monitoring of SARS-CoV-2 variants in England: demonstration case study for Bristol (December 2020 to March 2021), 8 April 2021](https://www.gov.uk/government/publications/jbc-and-defra-wastewater-monitoring-of-sars-cov-2-variants-in-england-demonstration-case-study-for-bristol-december-2020-to-march-2021-8-april-20)
 LCS                                                                           [@Valieris2022],
