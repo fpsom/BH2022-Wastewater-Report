@@ -65,21 +65,22 @@ The main goal of this project has been to review, collate and offer a first atte
 One of the first activities of the project was to review and identify the possible questions that an omic Wastewater Surveillance is expected to address, keeping in mind that a key requirement of the system is to produce actionable results, i.e. information that can be directly consumed by public health experts. For example, `VCF` files cannot be considered as actionable, as they require particular expertise to be understood; on the other hand, variant frequencies in a given sample are actionable, as they provide sufficient information to a public health expert to follow up.
 
 An indicative list of these questions are:
+
 1. Is virus `v` present in the wastewater sample?
-  Essentially this is a question of presence/absence that is traditionally addressed through RT-PCR or equivalent methods. However, there are cases (such as the monkeypox virus) that RT-PCR cannot disambiguate easily, thus requiring a sequencing step to complement.
+
+   Essentially this is a question of presence/absence that is traditionally addressed through RT-PCR or equivalent methods. However, there are cases (such as the monkeypox virus) that RT-PCR cannot disambiguate easily, thus requiring a sequencing step to complement.
 
 2. Is the variant `vv` present in the wastewater sample?
 
 3. What is the longitudinal change of the variants?
-  Essentially this is translated as identifying the trend of variant presence frequencies across multiple time points and samples.
+
+   Essentially this is translated as identifying the trend of variant presence frequencies across multiple time points and samples.
 
 4. What is the fitness advantage?
-  This is one of the more advanced questions that could be addressed by wastewater surveillance, and involves the projection of the trajectory of a given variant in time and the calculation of a possible $R_e$.
+
+   This is one of the more advanced questions that could be addressed by wastewater surveillance, and involves the projection of the trajectory of a given variant in time and the calculation of a possible $R_e$.
 
 5. What are potentially emerging variants?
-
-
-
 
 
 # Standardizing definitions
@@ -109,79 +110,76 @@ For each of these workflows, we have identified the key phases involved (not inc
 
 Omics WW Surveillance System - specific target (e.g. single virus + variants) / amplicon based
 
-- **Step 0**: RT-PCR
-  _Objectives_: Rough presence/absence of virus. Plus variants depending on probe.
-  _Actionable_: Yes (basic)
-- **Step 1**: Sequencing
-  _Objectives_: `FASTQ`/`FAST5` files - no further information.
-  _Actionable_: No
-- **Step 2**: Alignment to reference (incl. host removal + cleaning)
-  _Objectives_: `BAM` file.
-  _Actionable_: No
-- **Step 3**: Identify mutations
-  _Objectives_: `VCF` files, list of mutations, pileups, etc
-  _Actionable_: No
-- **Step 4**: Detect variants based on definitions
-  _Objectives_: List of variants
-  _Actionable_: Yes (variant level)
-- **Step 5**: Quantify variants based on definitions
-  _Objectives_: List of variants with frequencies (should add up to 100% per sample)
-  _Actionable_: Yes (variant trends)
-- **Step 6**: Define new variants based on mutations
-  _Objectives_: List of mutations not mapping to known definitions
-  _Actionable_: Yes (emerging variants)
+Nb | Step | Objectives | Actionable
+---| --- | --- | ---
+**0** | RT-PCR | Rough presence/absence of virus. Plus variants depending on probe. | Yes (basic)
+**1** | Sequencing | `FASTQ`/`FAST5` files - no further information | No
+**2** | Alignment to reference (incl. host removal + cleaning) | `BAM` file. | No
+**3** | Identify mutations | `VCF` files, list of mutations, pileups, etc | No
+**4** | Detect variants based on definitions | List of variants | Yes (variant level)
+**5** | Quantify variants based on definitions | List of variants with frequencies (should add up to 100% per sample) | Yes (variant trends)
+**6** | Define new variants based on mutations | List of mutations not mapping to known definitions | Yes (emerging variants)
 
 
-## unknown target metagenomics / metatranscriptomics workflow
+## Unknown target meta-genomics / -transcriptomics workflow
 
 Omics WW Surveillance System - unknown target metagenomics/metatranscriptomics (depending on the type of target you are looking for)
 
-- **Step 0**: RT-PCR
-  _Objectives_: **Not possible/Not applicable**
-  _Actionable_: No
-- **Step 1**: Sequencing
-  _Objectives_: `FASTQ`/`FAST5` files - no further information.
-  _Actionable_: No
-- **Step 2**: QC on reads (remove host sequencing)
-  _Objectives_: `FASTQ`/`FAST5` files - no further information.
-  _Actionable_: No
-- **Step 3a**: Alignment to references (known targets, e.g. `FASTA` files of the 10 viruses/bacteria you are checking)
-  _Objectives_: `BAM` files and simple visualizations
-  _Actionable_: Yes (basic). As a next step, this can connect to the amplicon pipeline (for each `BAM` file), starting from _Step 3_.
-- **Step 3b**: Alignment/matching against agnostic databases (such as Kraken, NR, k-mer based search etc)
-  _Objectives_: Table of matches (`BLAST`-like tables) and simple visualizations (such as by taxonomy)
-  _Actionable_: Yes (basic). 
-- **Step 3c**: AMR detection and virulence factor, using specific AMR databases
-  _Objectives_: List of AMR and virulence factor genes detected
-  _Actionable_: Yes
-
-
+Nb | Step | Objectives | Actionable
+---| --- | --- | ---
+**0** | RT-PCR | **Not possible/Not applicable** | No
+**1** | Sequencing | `FASTQ`/`FAST5` files - no further information. | No
+**2** | QC on reads (remove host sequencing) | `FASTQ`/`FAST5` files - no further information. | No
+**3a** | Alignment to references (known targets, e.g. `FASTA` files of the 10 viruses/bacteria you are checking) | `BAM` files and simple visualizations | Yes (basic). As a next step, this can connect to the amplicon pipeline (for each `BAM` file), starting from _Step 3_.
+**3b** | Alignment/matching against agnostic databases (such as Kraken, NR, k-mer based search etc) | Table of matches (`BLAST`-like tables) and simple visualizations (such as by taxonomy) | Yes (basic). 
+**3c** | AMR detection and virulence factor, using specific AMR databases | List of AMR and virulence factor genes detected | Yes
 
 # List of relevant software tools
 
 In order to have a better assessment of the landscape, it's important to be aware of the various bioinformatic tools that exist, and fit in the above steps. For each tool we captured the following fields:
 
+1. Tool/Workflow name
+2. Goal / Objective of the tool
+3. Expected Inputs
+4. Produced Output
+5. Targeted (Amplicon) or Untargeted (Meta-genomics/-transcriptomics)
+6. Scope (such as SARS-CoV-2, microbiome, AMR, monkeypox)
+7. Standalone (i.e. runs on FASTQ file input) tool, or intermediate tool (i.e it requires additional steps)
+8. Corresponding step(s) of the workflow
+9. Version
+10. Date of latest version
+11. License
+12. Source Code
+13. External tools used
+14. Compatible to existing workflow systems (such as Galaxy, CWL, Snakemake, Nextflow, etc)
+15. Available through package manager (ie bioconda, bioconductor, etc)
+14. Citation of the tool (i.e. papers that have already used the tool)
 
-\begin{enumerate}
-\item Tool Name
-\item Version
-\item Date of latest version
-\item License
-\item Goal / Objective of the tool
-\item Expected Inputs
-\item Produced Output
-\item Source Code Location
-\item Does it use external tools
-\item Compatible to existing workflow systems (such as Galaxy, CWL, Snakemake, Nextflow, etc)
-\item Available through package manager (ie bioconda, bioconductor, etc)
-\item Scope (such as SARS-CoV-2, microbiome, AMR, monkeypox)
-\item Is it standalone (i.e. runs on FASTQ file input), or does it require additional steps.
-\item Citation of the tool (i.e. papers that have already used the tool)
-\item Amplicon or Metagenomics
-\item Which level of the workflow does it fall
-\end{enumerate}
+We identified 21 tools/workflow:
 
-
+Tool/Workflow name | Targeted or Untargeted  |	Scope |	Corresponding step(s) of the workflow
+--- | --- | --- | ---
+Freyja |  |  | 
+COJAC |  |  | 
+LCS |  |  | 
+Kallisto |  |  | 
+Alcov |  |  | 
+SAM refiner |  |  | 
+Pipes et al. |  |  | 
+Gromstole |  |  | 
+AG |  |  | 
+Lineagespot |  |  | 
+PiGx |  |  | 
+Cowwid |  |  | 
+Izquierdo-Lara et al. |  |  | 
+Galaxy wastewater amplicon workflow |  |  | 
+Kraken |  |  | 
+KRONA |  |  | 
+Abricate |  |  | 
+staramr |  |  | 
+Mykrobe |  |  | 
+Pathofact |  |  | 
+ariba |  |  | 
 
 # Discussion
 
@@ -194,32 +192,4 @@ Some of the authors were funded by ELIXIR, the research infrastructure for life-
 
 ## References
 
-
-
-
-As part of the one week Biohackathion 2019 in Fukuoka Japan, we formed
-a working group on logic programming for the biomedical sciences.
-Logic programming is understood by many bioinformaticians when it is
-presented in the form of relational SQL queries or SPARQL
-queries. More advanced logic programming, however, is underutilized in
-bioinformatics.  Prolog, for example, is a high-level programming
-language that has its roots in first-order logic or first-order
-predicate calculus.  Another example, miniKanren, is an embedded
-Domain Specific Language for logic programming. Core miniKanren is
-exceptionally simple, with only three logical operators and one
-interface operator [@uses_method_in:reasoned2nd].
-
-![Logic programming resolver traverses the solution space to find all matches \label{fig}](./logic-programming.png)
-
-![An SVG example](./test.svg)
-
-The introduction of logic programming is particularly relevant in the
-context of multi-model data representations where data can be accessed
-in memory as free data structures, but also on disk where data can be
-represented as tables, trees (documents), and graphs. In
-bioinformatics we can make use of all these different data sources and
-have a query engine that can mine them all efficiently.  [@Chiba2015], KEGG OC, TogoVar, JCM, Allie, EBI
- BioSamples, UniProt, and DisGeNET [@Queralt2016]. [@agreesWith:reasoned2nd], PhD thesis
-[@ByrdPhD], and [online](https://www.youtube.com/watch?v=eQL48qYDwp4)
-[talks](https://www.youtube.com/watch?v=o3AHnyEf7IE).  FALDO model [@agreesWith:Bolleman2016]
 
