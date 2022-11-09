@@ -178,10 +178,8 @@ In order to have a better assessment of the landscape, it's important to be awar
 We identified 21 tools/workflow:
 
 | Tool/Workflow name | Targeted / Untargeted | Scope | Workflow step(s) | Papers that used it |
-|:------------------:|:---------------------:|:-----:|:----------------:|:-------------------:|
+| :----------------- | :-------------------- | :---- | :--------------- | :------------------ |
 | Freyja             |                       |       |                  |  [@Karthikeyan2022], [@SolisMoreira2022], [@Karthikeyan2021], [Center for Food Safety and Applied Nutrition."Wastewater Surveillance for SARS-CoV-2 Variants". FDA (Jan. 2022)](https://www.fda.gov/food/whole-genome-sequencing-wgs-program/wastewater-surveillance-sars-cov-2-variants) |
-
-
 
 
 
