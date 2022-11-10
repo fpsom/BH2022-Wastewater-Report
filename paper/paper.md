@@ -111,7 +111,7 @@ For each of these workflows, we have identified the key phases involved (not inc
 Omics WW Surveillance System - specific target (e.g. single virus + variants) / amplicon based
 
 
-\begin{table}[ht]
+\begin{table}[H]
   \begin{center}
     \caption{Specific target workflow}
     \label{tab:tableTargetWorkflow}
@@ -119,7 +119,7 @@ Omics WW Surveillance System - specific target (e.g. single virus + variants) / 
       \textbf{Nb} & \textbf{Step} & \textbf{Objectives} & \textbf{Actionable} \\
       \hline
       \textbf{0} & RT-PCR & Rough presence/absence of virus. Plus variants depending on probe. & Yes (basic) \\
-      \textbf{1} & Sequencing & \texttt{FASTQ}/\texttt{FAST5} files no further information & No \\
+      \textbf{1} & Sequencing & \texttt{FASTQ}/\texttt{FAST5} files - no further information & No \\
       \textbf{2} & Alignment to reference (incl. host removal and cleaning) & \texttt{BAM} file. & No \\
       \textbf{3} & Identify mutations & \texttt{VCF} files, list of mutations, pileups, etc & No \\
       \textbf{4} & Detect variants based on definitions & List of variants & Yes (variant level) \\
@@ -131,51 +131,27 @@ Omics WW Surveillance System - specific target (e.g. single virus + variants) / 
 
 
 
-
-
-Nb      Step                         Objectives                           Actionable
------   ----                         ----------                           -----------
-**0**   RT-PCR                       Rough presence/absence of virus.     Yes (basic)
-                                     Plus variants depending on probe.   
-**1**   Sequencing                   `FASTQ`/`FAST5` files                No
-                                     no further information
-**2**   Alignment to reference       `BAM` file.                          No
-        (incl. host removal
-        and cleaning)
-**3**   Identify mutations           `VCF` files, list of mutations,      No
-                                     pileups, etc
-**4**   Detect variants based on     List of variants                     Yes (variant level)
-        definitions
-**5**   Quantify variants based      List of variants with frequencies    Yes (variant trends)
-        on definitions               (should add up to 100% per sample)
-**6**   Define new variants based    List of mutations not mapping        Yes (emerging variants)
-        on mutations                 to known definitions      
-
 ## Unknown target meta-genomics / -transcriptomics workflow
 
 Omics WW Surveillance System - unknown target metagenomics/metatranscriptomics (depending on the type of target you are looking for)
 
-Nb      Step                          Objectives                   Actionable
----     -----                         ------------                 ---------
-**0**   RT-PCR                        **Not possible** /           No
-                                      **Not applicable**
-**1**   Sequencing                    `FASTQ`/`FAST5` files -      No
-                                      no further information.
-**2**   QC on reads (remove host      `FASTQ`/`FAST5` files -      No
-        sequencing)                    no further information.
-**3a**  Alignment to references       `BAM` files and simple       Yes (basic).
-        (known targets, e.g. `FASTA`   visualizations              As a next step,
-        files of the 10 viruses /                                  this can connect to the
-        bacteria you are checking)                                 amplicon pipeline (for
-                                                                   each `BAM` file),
-                                                                   starting from _Step 3_.
-**3b**  Alignment/matching against    Table of matches             Yes (basic). 
-        agnostic databases (such as   (`BLAST`-like tables)
-        Kraken, NR, k-mer based        and simple visualizations
-        search etc)                    (such as by taxonomy)
-**3c**  AMR detection and virulence   List of AMR and              Yes
-        factor, using specific AMR    virulence factor genes
-        databases                      detected
+\begin{table}[H]
+  \begin{center}
+    \caption{Unknown target workflow}
+    \label{tab:tableUnknownTargetWorkflow}
+    \begin{tabular}{p{0.1\linewidth} | p{0.3\linewidth} | p{0.3\linewidth} | p{0.3\linewidth}}
+      \textbf{Nb} & \textbf{Step} & \textbf{Objectives} & \textbf{Actionable} \\
+      \hline
+      \textbf{0} & RT-PCR & \textbf{Not possible} / \textbf{Not applicable} & No \\
+      \textbf{1} & Sequencing & \texttt{FASTQ}/\texttt{FAST5} files - no further information & No \\
+      \textbf{2} & QC on reads (remove host sequences) & \texttt{FASTQ}/\texttt{FAST5} files - no further information & No  \\
+      \textbf{3a} & Alignment to references (known targets, e.g. \texttt{FASTA} files of the top 10 viruses /bacteria you are checking against) & \texttt{BAM} files and simple visualizations. & Yes (basic). As a next step, this can connect to the amplicon pipeline (for each \texttt{BAM} file), starting from \emph{Step 3}. \\
+      \textbf{3b} & Alignment/matching against agnostic databases (such as Kraken, NR, k-mer based search etc) & Table of matches (\texttt{BLAST}-like tables) and simple visualizations (such as by taxonomy). & Yes (basic) \\
+      \textbf{3c} & AMR detection and virulence factor, using specific AMR databases. & List of AMR and virulence factor genes detected & Yes \\
+    \end{tabular}
+  \end{center}
+\end{table}
+
 
 # List of relevant software tools
 
