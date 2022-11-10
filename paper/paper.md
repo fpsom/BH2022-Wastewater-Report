@@ -193,7 +193,7 @@ We identified 21 tools/workflow:
 
 
 Tool name      (Un)Targeted     	  Scope    Step(s)      Papers
----------      ------------         -----    --------     --------------
+---------      ------------         -----    --------     ------
 Freyja                                                    [@Karthikeyan2022],
                                                           [@SolisMoreira2022],
                                                           [@Karthikeyan2021],
