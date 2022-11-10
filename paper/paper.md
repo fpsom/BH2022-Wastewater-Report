@@ -192,30 +192,31 @@ We identified 21 tools/workflow:
 \end{table}
 
 
-Tool/Workflow name     Targeted/ Untargeted   	Scope    Workflow step(s)     Papers that used it
--------------------    --------------------     ------   -----------------    --------------------
-Freyja                                                                        [@Karthikeyan2022],
-                                                                              [@SolisMoreira2022],
-                                                                              [@Karthikeyan2021],
-                                                                              [Center for Food Safety and Applied Nutrition."Wastewater Surveillance for SARS-CoV-2 Variants". FDA (Jan. 2022)](https://www.fda.gov/food/whole-genome-sequencing-wgs-program/wastewater-surveillance-sars-cov-2-variants)
-COJAC                                                                         [@Jahn2022],
-                                                                              [@Karthikeyan2022], [JBC and Defra "Wastewater monitoring of SARS-CoV-2 variants in England: demonstration case study for Bristol (December 2020 to March 2021), 8 April 2021](https://www.gov.uk/government/publications/jbc-and-defra-wastewater-monitoring-of-sars-cov-2-variants-in-england-demonstration-case-study-for-bristol-december-2020-to-march-2021-8-april-20)
-LCS                                                                           [@Valieris2022],
-                                                                              [@Karthikeyan2022]
-Kallisto                                                                      [@Baaijens2021],
-                                                                              [Matei Anton, "Kallisto Repurposed: Using sequencing reads from the spike, nucleocapsid, and a middle region of nsp3 in the kallisto pipeline to better predict SARS-CoV-2 variants in wastewater", 2022](https://repository.tudelft.nl/islandora/object/uuid%3A990e42c3-e79f-4ff9-85ffa614554269bb) 
-Alcov                                                                         [@Ellmen2021]
-SAM refiner                                                                   [@Gregory2021],
-                                                                              [@Gregory2022],
-                                                                              [@Yaglom2022]
-Pipes et al.                                                                  [@Pipes2022]
+Tool/Workflow      Targeted /    	  Scope    Workflow      Papers that 
+name               Untargeted                 step(s)      used it
+--------------    -------------     ------   ---------    --------------
+Freyja                                                    [@Karthikeyan2022],
+                                                          [@SolisMoreira2022],
+                                                          [@Karthikeyan2021],
+                                                          [Center for Food Safety and Applied Nutrition."Wastewater Surveillance for SARS-CoV-2 Variants". FDA (Jan. 2022)](https://www.fda.gov/food/whole-genome-sequencing-wgs-program/wastewater-surveillance-sars-cov-2-variants)
+COJAC                                                     [@Jahn2022],
+                                                          [@Karthikeyan2022], [JBC and Defra "Wastewater monitoring of SARS-CoV-2 variants in England: demonstration case study for Bristol (December 2020 to March 2021), 8 April 2021](https://www.gov.uk/government/publications/jbc-and-defra-wastewater-monitoring-of-sars-cov-2-variants-in-england-demonstration-case-study-for-bristol-december-2020-to-march-2021-8-april-20)
+LCS                                                       [@Valieris2022],
+                                                          [@Karthikeyan2022]
+Kallisto                                                  [@Baaijens2021],
+                                                          [Matei Anton, "Kallisto Repurposed: Using sequencing reads from the spike, nucleocapsid, and a middle region of nsp3 in the kallisto pipeline to better predict SARS-CoV-2 variants in wastewater", 2022](https://repository.tudelft.nl/islandora/object/uuid%3A990e42c3-e79f-4ff9-85ffa614554269bb) 
+Alcov                                                     [@Ellmen2021]
+SAM refiner                                               [Gregory2021],
+                                                          [@Gregory2022],
+                                                          [@Yaglom2022]
+Pipes et al.                                              [@Pipes2022]
 Gromstole
-AG                                                                            [@NGuessan2022]
-Lineagespot                                                                   [@Pechlivanis2022]
-PiGx                                                                          [@Schumann2021]
-Cowwid                                                                        [@Jahn2021],
-                                                                              [Surveillance of SARS-CoV-2 genomic variants in wastewater](https://bsse.ethz.ch/cbg/research/computational-virology/sarscov2-variants-wastewater-surveillance.html)
-Izquierdo-Lara et al.                                                         [@IzquierdoLara2021] 
+AG                                                        [@NGuessan2022]
+Lineagespot                                               [@Pechlivanis2022]
+PiGx                                                      [@Schumann2021]
+Cowwid                                                    [@Jahn2021],
+                                                          [Surveillance of SARS-CoV-2 genomic variants in wastewater](https://bsse.ethz.ch/cbg/research/computational-virology/sarscov2-variants-wastewater-surveillance.html)
+Izquierdo-Lara et al.                                     [@IzquierdoLara2021] 
 Galaxy wastewater amplicon workflow
 Kraken
 KRONA
