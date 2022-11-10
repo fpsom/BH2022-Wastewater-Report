@@ -115,15 +115,15 @@ Omics WW Surveillance System - specific target (e.g. single virus + variants) / 
   \begin{center}
     \caption{Specific target workflow}
     \label{tab:tableTargetWorkflow}
-    \begin{tabular}{l|c|r|r} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+    \begin{tabular}{p{0.1\linewidth} | p{0.3\linewidth} | p{0.3\linewidth} | p{0.3\linewidth}}
       Nb & Step & Objectives & Actionable \\
       \hline
-      **0** & RT-PCR & Rough presence/absence of virus. Plus variants depending on probe. & Yes (basic) \\
-      **1** & Sequencing & `FASTQ`/`FAST5` files no further information & No \\
-      **2** & Alignment to reference (incl. host removal and cleaning) & `BAM` file. & No \\
-      **3** & Identify mutations & `VCF` files, list of mutations, pileups, etc & No \\
-      **4** & Detect variants based on definitions & List of variants & Yes (variant level) \\
-      **5** & Quantify variants based on definitions & List of variants with frequencies (should add up to 100% per sample) & Yes (variant trends) \\
+      \textbf{0} & RT-PCR & Rough presence/absence of virus. Plus variants depending on probe. & Yes (basic) \\
+      \textbf{1} & Sequencing & `FASTQ`/`FAST5` files no further information & No \\
+      \textbf{2} & Alignment to reference (incl. host removal and cleaning) & `BAM` file. & No \\
+      \textbf{3} & Identify mutations & `VCF` files, list of mutations, pileups, etc & No \\
+      \textbf{4} & Detect variants based on definitions & List of variants & Yes (variant level) \\
+      \textbf{5} & Quantify variants based on definitions & List of variants with frequencies (should add up to 100% per sample) & Yes (variant trends) \\
     \end{tabular}
   \end{center}
 \end{table}
