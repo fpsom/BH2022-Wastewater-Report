@@ -111,19 +111,20 @@ For each of these workflows, we have identified the key phases involved (not inc
 Omics WW Surveillance System - specific target (e.g. single virus + variants) / amplicon based
 
 
-\begin{table}[h!]
+\begin{table}[ht]
   \begin{center}
     \caption{Specific target workflow}
     \label{tab:tableTargetWorkflow}
     \begin{tabular}{p{0.1\linewidth} | p{0.3\linewidth} | p{0.3\linewidth} | p{0.3\linewidth}}
-      Nb & Step & Objectives & Actionable \\
+      \textbf{Nb} & \textbf{Step} & \textbf{Objectives} & \textbf{Actionable} \\
       \hline
       \textbf{0} & RT-PCR & Rough presence/absence of virus. Plus variants depending on probe. & Yes (basic) \\
-      \textbf{1} & Sequencing & `FASTQ`/`FAST5` files no further information & No \\
-      \textbf{2} & Alignment to reference (incl. host removal and cleaning) & `BAM` file. & No \\
-      \textbf{3} & Identify mutations & `VCF` files, list of mutations, pileups, etc & No \\
+      \textbf{1} & Sequencing & \texttt{FASTQ}/\texttt{FAST5} files no further information & No \\
+      \textbf{2} & Alignment to reference (incl. host removal and cleaning) & \texttt{BAM} file. & No \\
+      \textbf{3} & Identify mutations & \texttt{VCF} files, list of mutations, pileups, etc & No \\
       \textbf{4} & Detect variants based on definitions & List of variants & Yes (variant level) \\
-      \textbf{5} & Quantify variants based on definitions & List of variants with frequencies (should add up to 100% per sample) & Yes (variant trends) \\
+      \textbf{5} & Quantify variants based on definitions & List of variants with frequencies (should add up to 100\% per sample) & Yes (variant trends) \\
+      \textbf{6} & Define new variants based on mutations & List of mutations not mapping to known definitions & Yes (emerging variants) \\
     \end{tabular}
   \end{center}
 \end{table}
