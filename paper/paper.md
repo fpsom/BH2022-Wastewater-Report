@@ -193,7 +193,7 @@ We identified 21 tools/workflow:
 
 ---------------------------------------------------------------------
 Tool/Workflow      Targeted /    	  Scope    Workflow     Papers that 
-name               Untargeted                 step(s)     used it
+name               Untargeted                step(s)      used it
 --------------     ----------       -----    --------     -----------
 Freyja                                                    [@Karthikeyan2022],
                                                           [@SolisMoreira2022],
@@ -246,7 +246,7 @@ Pathofact
 
 ariba
 
-------------------------------------------------------------------------
+---------------------------------------------------------------------
 
 
 # Discussion
