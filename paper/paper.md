@@ -124,7 +124,6 @@ Omics WW Surveillance System - specific target (e.g. single virus + variants) / 
       **3** & Identify mutations & `VCF` files, list of mutations, pileups, etc & No \\
       **4** & Detect variants based on definitions & List of variants & Yes (variant level) \\
       **5** & Quantify variants based on definitions & List of variants with frequencies (should add up to 100% per sample) & Yes (variant trends) \\
-      **6** & Define new variants based on mutations & List of mutations not mapping to known definitions & Yes (emerging variants) \\
     \end{tabular}
   \end{center}
 \end{table}
