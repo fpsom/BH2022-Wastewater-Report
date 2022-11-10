@@ -192,8 +192,8 @@ We identified 21 tools/workflow:
 \end{table}
 
 
-Tool name      (Un)Targeted or  	  Scope    Step(s)      Papers
----------      ---------------      -----    --------     --------------
+Tool name      (Un)Targeted     	  Scope    Step(s)      Papers
+---------      ------------         -----    --------     --------------
 Freyja                                                    [@Karthikeyan2022],
                                                           [@SolisMoreira2022],
                                                           [@Karthikeyan2021],
