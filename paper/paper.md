@@ -110,6 +110,29 @@ For each of these workflows, we have identified the key phases involved (not inc
 
 Omics WW Surveillance System - specific target (e.g. single virus + variants) / amplicon based
 
+
+\begin{table}[h!]
+  \begin{center}
+    \caption{Specific target workflow}
+    \label{tab:tableTargetWorkflow}
+    \begin{tabular}{l|c|r|r} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+      Nb & Step & Objectives & Actionable \\
+      \hline
+      **0** & RT-PCR & Rough presence/absence of virus. Plus variants depending on probe. & Yes (basic) \\
+      **1** & Sequencing & `FASTQ`/`FAST5` files no further information & No \\
+      **2** & Alignment to reference (incl. host removal and cleaning) & `BAM` file. & No \\
+      **3** & Identify mutations & `VCF` files, list of mutations, pileups, etc & No \\
+      **4** & Detect variants based on definitions & List of variants & Yes (variant level) \\
+      **5** & Quantify variants based on definitions & List of variants with frequencies (should add up to 100% per sample) & Yes (variant trends) \\
+      **6** & Define new variants based on mutations & List of mutations not mapping to known definitions & Yes (emerging variants) \\
+    \end{tabular}
+  \end{center}
+\end{table}
+
+
+
+
+
 Nb      Step                         Objectives                           Actionable
 -----   ----                         ----------                           -----------
 **0**   RT-PCR                       Rough presence/absence of virus.     Yes (basic)
@@ -178,23 +201,6 @@ In order to have a better assessment of the landscape, it's important to be awar
 We identified 21 tools/workflow:
 
 
-<table>
-  <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
-</table>
 
 
 
