@@ -191,7 +191,7 @@ We identified 21 tools/workflow:
   \end{center}
 \end{table}
 
----------------------------------------------------------------------
+--------------     ----------       -----    --------     -----------
 Tool/Workflow      Targeted /    	  Scope    Workflow     Papers that 
 name               Untargeted                step(s)      used it
 --------------     ----------       -----    --------     -----------
@@ -246,7 +246,6 @@ Pathofact
 
 ariba
 
----------------------------------------------------------------------
 
 
 # Discussion
