@@ -185,7 +185,7 @@ We identified 21 tools/workflow:
     \begin{tabular}{p{0.1\linewidth} | p{0.2\linewidth} | p{0.2\linewidth} | p{0.2\linewidth} | p{0.2\linewidth}}
       \textbf{Tool / Workflow name} & \textbf{Targeted / Untargeted} & \textbf{Scope} & \textbf{Corresponding Workflow step(s)} & \textbf{Papers that used it} \\
       \hline
-      \textbf{Freyja} & & & & \cite{Karthikeyan2022, SolisMoreira2022, Karthikeyan2021}, \href{https://www.fda.gov/food/whole-genome-sequencing-wgs-program/wastewater-surveillance-sars-cov-2-variants}{Center for Food Safety and Applied Nutrition."Wastewater Surveillance for SARS-CoV-2 Variants". FDA (Jan. 2022)}  \\
+      \textbf{Freyja} & & & &  [@Karthikeyan2022], [@SolisMoreira2022],[@Karthikeyan2021], \href{https://www.fda.gov/food/whole-genome-sequencing-wgs-program/wastewater-surveillance-sars-cov-2-variants}{Center for Food Safety and Applied Nutrition."Wastewater Surveillance for SARS-CoV-2 Variants". FDA (Jan. 2022)}  \\
 
     \end{tabular}
   \end{center}
