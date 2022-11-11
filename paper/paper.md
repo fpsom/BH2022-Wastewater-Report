@@ -111,7 +111,7 @@ For each of these workflows, we have identified the key phases involved (not inc
 Omics WW Surveillance System - specific target (e.g. single virus + variants) / amplicon based
 
 Nb | Step |	Objective | Actionable
----|---- -|-----------|------------
+---|------|-----------|------------
 0 | RT-PCR | Rough presence/absence of virus. Plus variants depending on probe. | Yes (basic)
 1 | Sequencing | `FASTQ`/`FAST5` - no further information | No
 2 | Alignment to reference (incl. host removal and cleaning) | `BAM` file | No 
@@ -126,7 +126,7 @@ Nb | Step |	Objective | Actionable
 Omics WW Surveillance System - unknown target metagenomics/metatranscriptomics (depending on the type of target you are looking for)
 
 Nb | Step |	Objective | Actionable
----|---- -|-----------|------------
+---|------|-----------|------------
 0 | RT-PCR | **Not possible** / **Not applicable** | No
 1 | Sequencing | `FASTQ`/`FAST5` - no further information | No
 2 | QC on reads (remove host sequences) | `FASTQ`/`FAST5` - no further information | No
