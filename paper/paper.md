@@ -110,48 +110,29 @@ For each of these workflows, we have identified the key phases involved (not inc
 
 Omics WW Surveillance System - specific target (e.g. single virus + variants) / amplicon based
 
-
-\begin{table}[H]
-  \begin{center}
-    \caption{Specific target workflow}
-    \label{tab:tableTargetWorkflow}
-    \begin{tabular}{p{0.1\linewidth} | p{0.3\linewidth} | p{0.3\linewidth} | p{0.3\linewidth}}
-      \textbf{Nb} & \textbf{Step} & \textbf{Objectives} & \textbf{Actionable} \\
-      \hline
-      \textbf{0} & RT-PCR & Rough presence/absence of virus. Plus variants depending on probe. & Yes (basic) \\
-      \textbf{1} & Sequencing & \texttt{FASTQ}/\texttt{FAST5} files - no further information & No \\
-      \textbf{2} & Alignment to reference (incl. host removal and cleaning) & \texttt{BAM} file. & No \\
-      \textbf{3} & Identify mutations & \texttt{VCF} files, list of mutations, pileups, etc & No \\
-      \textbf{4} & Detect variants based on definitions & List of variants & Yes (variant level) \\
-      \textbf{5} & Quantify variants based on definitions & List of variants with frequencies (should add up to 100\% per sample) & Yes (variant trends) \\
-      \textbf{6} & Define new variants based on mutations & List of mutations not mapping to known definitions & Yes (emerging variants) \\
-    \end{tabular}
-  \end{center}
-\end{table}
-
+Nb | Step |	Objective | Actionable
+---|---- -|-----------|------------
+0 | RT-PCR | Rough presence/absence of virus. Plus variants depending on probe. | Yes (basic)
+1 | Sequencing | `FASTQ`/`FAST5` - no further information | No
+2 | Alignment to reference (incl. host removal and cleaning) | `BAM` file | No 
+3 | Identify mutations | `VCF` files, list of mutations, pileups, etc | No 
+4 | Detect variants based on definitions | List of variants | Yes (variant level)
+5 | Quantify variants based on definitions | List of variants with frequencies (should add up to 100% per sample) | Yes (variant trends)
+6 | Define new variants based on mutations | List of mutations not mapping to known definitions | Yes (emerging variants)
 
 
 ## Unknown target meta-genomics / -transcriptomics workflow
 
 Omics WW Surveillance System - unknown target metagenomics/metatranscriptomics (depending on the type of target you are looking for)
 
-\begin{table}[H]
-  \begin{center}
-    \caption{Unknown target workflow}
-    \label{tab:tableUnknownTargetWorkflow}
-    \begin{tabular}{p{0.1\linewidth} | p{0.3\linewidth} | p{0.3\linewidth} | p{0.3\linewidth}}
-      \textbf{Nb} & \textbf{Step} & \textbf{Objectives} & \textbf{Actionable} \\
-      \hline
-      \textbf{0} & RT-PCR & \textbf{Not possible} / \textbf{Not applicable} & No \\
-      \textbf{1} & Sequencing & \texttt{FASTQ}/\texttt{FAST5} files - no further information & No \\
-      \textbf{2} & QC on reads (remove host sequences) & \texttt{FASTQ}/\texttt{FAST5} files - no further information & No  \\
-      \textbf{3a} & Alignment to references (known targets, e.g. \texttt{FASTA} files of the top 10 viruses /bacteria you are checking against) & \texttt{BAM} files and simple visualizations. & Yes (basic). As a next step, this can connect to the amplicon pipeline (for each \texttt{BAM} file), starting from \emph{Step 3}. \\
-      \textbf{3b} & Alignment/matching against agnostic databases (such as Kraken, NR, k-mer based search etc) & Table of matches (\texttt{BLAST}-like tables) and simple visualizations (such as by taxonomy). & Yes (basic) \\
-      \textbf{3c} & AMR detection and virulence factor, using specific AMR databases. & List of AMR and virulence factor genes detected & Yes \\
-    \end{tabular}
-  \end{center}
-\end{table}
-
+Nb | Step |	Objective | Actionable
+---|---- -|-----------|------------
+0 | RT-PCR | **Not possible** / **Not applicable** | No
+1 | Sequencing | `FASTQ`/`FAST5` - no further information | No
+2 | QC on reads (remove host sequences) | `FASTQ`/`FAST5` - no further information | No
+3a | Alignment to references (known targets, e.g. `FASTA` files of the top 10 viruses /bacteria you are checking against) | `BAM` files and simple visualizations. | Yes (basic). As a next step, this can connect to the amplicon pipeline (for each `BAM` file), starting from _Step 3_. 
+3b | Alignment/matching against agnostic databases (such as Kraken, NR, k-mer based search etc) | Table of matches (`BLAST`-like tables) and simple visualizations (such as by taxonomy). | Yes (basic)
+3c | AMR detection and virulence factor, using specific AMR databases. | List of AMR and virulence factor genes detected | Yes
 
 # List of relevant software tools
 
@@ -176,68 +157,29 @@ In order to have a better assessment of the landscape, it's important to be awar
 
 We identified 21 tools/workflow:
 
-
-
-\begin{table}[H]
-  \begin{center}
-    \caption{List of tools}
-    \label{tab:tableListOfTools}
-    \begin{tabular}{p{0.1\linewidth} | p{0.2\linewidth} | p{0.2\linewidth} | p{0.2\linewidth} | p{0.2\linewidth}}
-      \textbf{Tool / Workflow name} & \textbf{Targeted / Untargeted} & \textbf{Scope} & \textbf{Corresponding Workflow step(s)} & \textbf{Papers that used it} \\
-      \hline
-      \textbf{Freyja} & & & &  [@Karthikeyan2022], [@SolisMoreira2022],[@Karthikeyan2021], \href{https://www.fda.gov/food/whole-genome-sequencing-wgs-program/wastewater-surveillance-sars-cov-2-variants}{Center for Food Safety and Applied Nutrition."Wastewater Surveillance for SARS-CoV-2 Variants". FDA (Jan. 2022)}  \\
-
-    \end{tabular}
-  \end{center}
-\end{table}
-
-
-
-
-
 Tool/Workflow name | Targeted/ Untargeted |	Scope | Workflow step(s) | Papers that used it
 -------------------|----------------------|-------|------------------|---------------------
 Freyja |   |  |   |  [@Karthikeyan2022], [@SolisMoreira2022], [@Karthikeyan2021], [Center for Food Safety and Applied Nutrition."Wastewater Surveillance for SARS-CoV-2 Variants". FDA (Jan. 2022)](https://www.fda.gov/food/whole-genome-sequencing-wgs-program/wastewater-surveillance-sars-cov-2-variants)
 COJAC |   |  |   |   [@Jahn2022],[@Karthikeyan2022], [JBC and Defra "Wastewater monitoring of SARS-CoV-2 variants in England: demonstration case study for Bristol (December 2020 to March 2021), 8 April 2021](https://www.gov.uk/government/publications/jbc-and-defra-wastewater-monitoring-of-sars-cov-2-variants-in-england-demonstration-case-study-for-bristol-december-2020-to-march-2021-8-april-20)
 LCS |   |  |   |   [@Valieris2022], [@Karthikeyan2022]
-
-
-
-
-
-
-Tool/Workflow name     Targeted/ Untargeted   	Scope    Workflow step(s)     Papers that used it
--------------------    --------------------     ------   -----------------    --------------------
-Freyja                                                                        [@Karthikeyan2022],
-                                                                              [@SolisMoreira2022],
-                                                                              [@Karthikeyan2021],
-                                                                              [Center for Food Safety and Applied Nutrition."Wastewater Surveillance for SARS-CoV-2 Variants". FDA (Jan. 2022)](https://www.fda.gov/food/whole-genome-sequencing-wgs-program/wastewater-surveillance-sars-cov-2-variants)
-COJAC                                                                         [@Jahn2022],
-                                                                              [@Karthikeyan2022], [JBC and Defra "Wastewater monitoring of SARS-CoV-2 variants in England: demonstration case study for Bristol (December 2020 to March 2021), 8 April 2021](https://www.gov.uk/government/publications/jbc-and-defra-wastewater-monitoring-of-sars-cov-2-variants-in-england-demonstration-case-study-for-bristol-december-2020-to-march-2021-8-april-20)
-LCS                                                                           [@Valieris2022],
-                                                                              [@Karthikeyan2022]
-Kallisto                                                                      [@Baaijens2021],
-                                                                              [Matei Anton, "Kallisto Repurposed: Using sequencing reads from the spike, nucleocapsid, and a middle region of nsp3 in the kallisto pipeline to better predict SARS-CoV-2 variants in wastewater", 2022](https://repository.tudelft.nl/islandora/object/uuid%3A990e42c3-e79f-4ff9-85ffa614554269bb) 
-Alcov                                                                         [@Ellmen2021]
-SAM refiner                                                                   [@Gregory2021],
-                                                                              [@Gregory2022],
-                                                                              [@Yaglom2022]
-Pipes et al.                                                                  [@Pipes2022]
-Gromstole
-AG                                                                            [@NGuessan2022]
-Lineagespot                                                                   [@Pechlivanis2022]
-PiGx                                                                          [@Schumann2021]
-Cowwid                                                                        [@Jahn2021],
-                                                                              [Surveillance of SARS-CoV-2 genomic variants in wastewater](https://bsse.ethz.ch/cbg/research/computational-virology/sarscov2-variants-wastewater-surveillance.html)
-Izquierdo-Lara et al.                                                         [@IzquierdoLara2021] 
-Galaxy wastewater amplicon workflow
-Kraken
-KRONA
-Abricate
-staramr
-Mykrobe
-Pathofact
-ariba
+Kallisto |   |  |   |   [@Baaijens2021], [Matei Anton, "Kallisto Repurposed: Using sequencing reads from the spike, nucleocapsid, and a middle region of nsp3 in the kallisto pipeline to better predict SARS-CoV-2 variants in wastewater", 2022](https://repository.tudelft.nl/islandora/object/uuid%3A990e42c3-e79f-4ff9-85ffa614554269bb) 
+Alcov |   |  |   |  [@Ellmen2021]
+SAM refiner |   |  |   |  [@Gregory2021],[@Gregory2022],[@Yaglom2022]
+Pipes et al. |   |  |   |  [@Pipes2022]
+Gromstole |   |  |   |  
+AG |   |  |   |  [@NGuessan2022]
+Lineagespot  |   |  |   |   [@Pechlivanis2022]
+PiGx  |   |  |   |   [@Schumann2021]
+Cowwid |   |  |   |  [@Jahn2021], |   |  |   |  [Surveillance of SARS-CoV-2 genomic variants in wastewater](https://bsse.ethz.ch/cbg/research/computational-virology/sarscov2-variants-wastewater-surveillance.html)
+Izquierdo-Lara et al.  |   |  |   |    [@IzquierdoLara2021] 
+Galaxy wastewater amplicon workflow |   |  |   |  
+Kraken |   |  |   |  
+KRONA |   |  |   |  
+Abricate |   |  |   |  
+staramr |   |  |   |  
+Mykrobe |   |  |   |  
+Pathofact |   |  |   |  
+ariba |   |  |   |  
 
 
 # Discussion
