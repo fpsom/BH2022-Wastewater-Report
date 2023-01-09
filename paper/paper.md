@@ -7,6 +7,9 @@ authors:
   - name: Fotis Psomopoulos
     orcid: 0000-0002-8021-9162
     affiliation: 1
+  - name: Konstantinos Kyritsis
+    orcid: 0000-0001-8035-341X
+    affiliation: 1
   - name: Ivan Topolsky
     orcid: 0000-0002-7561-0810
     affiliation: 2
