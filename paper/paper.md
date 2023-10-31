@@ -192,7 +192,8 @@ In order to have a better assessment of the landscape, it's important to be awar
 1. Tool/Workflow name
 2. Citation of the tool (i.e. papers that have already used the tool)
 
-We identified 11 tools for in-silico validation
+We identified 11 tools for in-silico validation.
+
 Tool name  | Citation
 -------------------|---------------------
 InsilicoSeq | https://github.com/HadrienG/InSilicoSeq
@@ -211,7 +212,7 @@ We identified 36 tools/workflow for bioinformatic processing and analysis of HTS
 
 Tool/Workflow name  | Citation
 -------------------|---------------------
-Freyja  [@Karthikeyan2022], [@SolisMoreira2022], [@Karthikeyan2021], [Center for Food Safety and Applied Nutrition."Wastewater Surveillance for SARS-CoV-2 Variants". FDA (Jan. 2022)](https://www.fda.gov/food/whole-genome-sequencing-wgs-program/wastewater-surveillance-sars-cov-2-variants)
+Freyja |  [@Karthikeyan2022], [@SolisMoreira2022], [@Karthikeyan2021], [Center for Food Safety and Applied Nutrition."Wastewater Surveillance for SARS-CoV-2 Variants". FDA (Jan. 2022)](https://www.fda.gov/food/whole-genome-sequencing-wgs-program/wastewater-surveillance-sars-cov-2-variants)
 COJAC | [@Jahn2022]
 LolliPop  | [@Dreifuss2022]
 LCS | [@Valieris2022], [@Karthikeyan2022]
