@@ -220,14 +220,14 @@ Here's the table reordered by action category:
 Tool/Workflow name  | Action |  Citation
 -------------------|-----------|-----------------
 Hostile | Host removal | [@hostile]
-viralrecon | Workflow for assembly and variant detection | [@viralrecon]
+viralrecon | Workflow for assembly and variant detection | [@nf-coreviralrecon]
 Viral-ngs | Workflow for assembly and taxonomic classification |[@viral-ngs]
-VIRify | Detection, annotation, and taxonomic classification | [@virify]
+VIRify | Detection, annotation, and taxonomic classification | [@virify_2023]
 Galaxy wastewater amplicon workflow | 
 Wastewater_surveillance_pipeline |  Variant composition &  lineage assignment | [@NGuessan2022]
 coronaSPades | Virus assembler |[@coronaspades]
 Kraken | taxonomic classification | [@kraken]
-Kraken2 | taxonomic classification | [@kraken2]
+Kraken2 | taxonomic classification | [@Kraken2]
 VirSorter2 | taxonomic classification | [@virsorter]
 KRONA |  taxonomic visulisation | [@krona]
 Abricate | AMR or virulence gene prediction | [@abricate]
@@ -245,12 +245,12 @@ Virstrain | Variant detection | [@virstrain]
 COJAC | Variant detection | [@Jahn2022]
 Lineagespot  |  Variant composition &  lineage assignment | [@Pechlivanis2022]
 Alcov | Variant composition | [@Ellmen2021]
-Gromstole | Variant composition |  https://github.com/PoonLab/gromstole
+Gromstole | Variant composition |  [https://github.com/PoonLab/gromstole](https://github.com/PoonLab/gromstole)
 LolliPop  | Variant Visualization | [@Dreifuss2022]
 Freyja  |   Lineage assignment  | [@Karthikeyan2022]
 LCS | Lineage composition | [@Valieris2022], [@Karthikeyan2022]
 Kallisto | Fast pseudoalignment quantification | [@Baaijens2021]
-ViralFlye | long-read Metagenome Assmebled Viruses (MAVs)| [@viralflye]
+ViralFlye | long-read Metagenome Assembled Viruses (MAVs)| [@viralflye]
 CheckV | Quality control of MAVs | [@checkv]
 
 
@@ -266,21 +266,24 @@ In response to the evolving landscape of viral genomic diversity analysis, we ha
 
 ###  Key Components
 
-- **V-pipe:** V-pipe has been a vital resource as part of the SIB Swiss Institute of Bioinformatics (Swiss Elixir Node) since 2017 [@Fuhrmann2023]. This workflow covers the initial preprocessing steps, encompassing quality control using prinseq, configurable alignment (employing bwa2 for SARS-CoV-2), and mutation identification via pileup generation and results summarization in TSV format.
+- **V-pipe**: An Integrated Bioinformatics Workflow
+V-pipe is an integrated bioinformatics workflow designed to address the evolving challenges in the analysis of viral genomic diversity. It has been a pivotal resource within the SIB Swiss Institute of Bioinformatics (Swiss Elixir Node) since 2017 [@Fuhrmann2023]. V-pipe covers the initial preprocessing steps, including quality control using prinseq, configurable alignment employing bwa2 for SARS-CoV-2, and mutation identification via pileup generation and results summarization in TSV format.
 
-- **COJAC:** This tool has been instrumental in the early detection of emerging variants, leveraging the co-occurrence of signature mutations. Notably, it played a role in monitoring the spread of the Omicron variant across 450 sites in the UK, as documented in a technical briefing [@UKHSA-TechnicalBriefing30].
+- **COJAC**: Early Detection of Emerging Variants
+COJAC is a crucial tool for the early detection of emerging variants, particularly useful for monitoring the spread of viral variants. It leverages the co-occurrence of signature mutations and has been instrumental in tracking the Omicron variant's distribution across 450 sites in the UK, as documented in a technical briefing [@UKHSA-TechnicalBriefing30].
 
-- **LolliPop:** LolliPop is designed for variant deconvolution and the estimation of relative abundances, even in scenarios involving shared mutations among variants and complex sequencing data. It employs a kernel-based deconvolution approach and harnesses time series information in the sample set.
+-**LolliPop**: Variant Deconvolution and Relative Abundance Estimation
+LolliPop is specifically developed for variant deconvolution and the estimation of relative abundances, even when dealing with shared mutations among variants and complex sequencing data. It utilizes a kernel-based deconvolution approach and capitalizes on time series information in the sample set.
 
-The newly integrated version of the workflow was officially released as part of Biohackathon 2022 and has already been deployed in Swiss Surveillance. This represents a significant step forward, offering a unified, end-to-end tool for bioinformatics analysis. It replaces the previous approach of running multiple tools as separate manual steps, delivering a clear advantage over independent tools with varying dependencies and environment requirements. The integrated environment enables enhanced version control and standardized surveillance within the framework of public health.
+These three key components were seamlessly integrated during a recent biohackathon, with real-world data from the Swiss variant surveillance program in wastewater serving as a benchmark for parameterization and prototype stability. The result is an integrated, end-to-end workflow that simplifies bioinformatics analysis, replacing the need for multiple manual steps and varying tool dependencies. This integrated environment enhances version control and standardization, catering to the needs of public health surveillance.
 
-Since the biohackathon, the finalized version has been incorporated into V-pipe version 3.0 and made available to a wider audience. It has already been successfully employed by other similar surveillance projects, demonstrating its utility and effectiveness in the field [@microorganisms11112660].
+Since its introduction at the Biohackathon 2022, the finalized version of V-pipe, incorporated into V-pipe version 3.0, has been made accessible to a wider audience and has been successfully adopted by similar surveillance projects, underlining its value and effectiveness in the field [@microorganisms11112660].
 
 ## Galaxy
 
 During the biohackathon, we engaged in productive discussions with researchers working on the Galaxy platform, exploring ways to make various analytical tools available within Galaxy's ecosystem.
 
-Since the conclusion of the biohackathon, there have been notable advancements in the integration of wastewater analysis tools into the Galaxy platform. Notably, tools such as COJAC are now accessible via a visual, user-friendly point-and-click interface on Galaxy (accessible at COJAC on Galaxy [https://usegalaxy.eu/root?tool_id=cooc_mutbamscan]). This integration enhances the accessibility of these tools, providing users with a seamless experience while also enabling their incorporation into comprehensive Galaxy workflows.
+Since the conclusion of the biohackathon, there have been notable advancements in the integration of wastewater analysis tools into the Galaxy platform. Notably, tools such as COJAC are now accessible via a visual, user-friendly point-and-click interface on Galaxy (accessible at COJAC on Galaxy [https://usegalaxy.eu/root?tool_id=cooc_mutbamscan](https://usegalaxy.eu/root?tool_id=cooc_mutbamscan)). This integration enhances the accessibility of these tools, providing users with a seamless experience while also enabling their incorporation into comprehensive Galaxy workflows.
 
 # Discussion
 
