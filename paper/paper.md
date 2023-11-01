@@ -219,7 +219,7 @@ We identified 36 tools/workflow for bioinformatic processing and analysis of HTS
 Here's the table reordered by action category:
 
 Tool/Workflow name  | Action |  Citation
--------------------|-----------\-----------------
+-------------------|-----------|-----------------
 Hostile | Host removal | [@hostile]
 viralrecon | Workflow for assembly and variant detection | [@viralrecon]
 Viral-ngs | Workflow for assembly and taxonomic classification |[@viral-ngs]
