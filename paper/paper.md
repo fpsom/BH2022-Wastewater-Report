@@ -145,7 +145,7 @@ Slightly different approaches are required for in-silico validation for targeted
 Nb | Step |	Objective | Actionable
 ---|------|-----------|------------
 0 | Generation of comprehensive viral database| Complete representation of genetic diversity for target virus(es)  | No
-1 | In-silico PCR with primers| FASTA file of amplicons  | No
+1 | _In-silico_ PCR with primers| FASTA file of amplicons  | No
 2 | Classification accuracy | Comparison of performance of primers for specific target(s)| Yes
 
 
@@ -156,10 +156,10 @@ Nb | Step |	Objective | Actionable
 1 | Generation of background DNA/RNA wastewater database | Accurate representation of matrix composition ( i.e. influent or effluent) | No 
 2 | Model wastewater sample composition | Accurately represent the viral composition in a wastewater dataset prior to sequencing, incorporating relevant information such as enrichment/depletion steps, composite or passive sample type | No
 
-### Final approach for both targeted and non-targeted in-silico approaches
+### Final approach for both targeted and non-targeted _in-silico_ approaches
 Nb | Step |	Objective | Actionable
 ---|------|-----------|------------
-3 | In-silico simulation of platform specific sequencing reads | FASTQ/FAST5 files | no
+3 | _In-silico_ simulation of platform specific sequencing reads | FASTQ/FAST5 files | no
 4 | Application of bioinformatic workflows/pipelines | Various outputs - virus classification variants detected and composition and presence/absense of clinically relevant mutations | No
 5 | Comparison to ground truth - Classification accuracy and compositional similarity/dissimilarty | Yes
 
@@ -167,7 +167,7 @@ Nb | Step |	Objective | Actionable
 
 Nb | Step |	Objective | Actionable
 ---|------|-----------|------------
-0 | RT-PCR | Rough presence/absence of virus. Plus variants depending on probe. | Yes (basic)
+0 | RT-PCR | Rough presence/absence of virus. Plus variants depending on primer. | Yes (basic)
 1 | Sequencing | Produce raw reads data in `FASTQ`/`FAST5` format | No
 2 | Quality control step | trimming/reads quality assesment | No
 3 | Alignment to reference (incl. host removal and cleaning) | `BAM` file | No 
@@ -194,11 +194,9 @@ Nb | Step |	Objective | Actionable
 
 # List of relevant software tools
 
-In order to have a better assessment of the landscape, it's important to be aware of the various bioinformatic tools that exist, and fit in the above steps. We have generated two tables to outline the tools useful for in-silico validation, as well as those tools used for the bioinformatic processing and analysis of High Throughput Sequencing data from wastewater samples. The tables are structured as follows: 
-1. Tool/Workflow name
-2. Citation of the tool (i.e. papers that have already used the tool)
+In order to have a better assessment of the landscape, it's important to be aware of the various bioinformatic tools that exist, and fit in the above steps. We have generated two tables to outline the tools useful for _in-silico_ validation, as well as those tools used for the bioinformatic processing and analysis of High Throughput Sequencing data from wastewater samples.
 
-We identified 12 tools for in-silico validation
+We identified 12 tools for _in-silico_ validation
 
 Tool name  | Citation
 -------------------|---------------------
@@ -210,8 +208,8 @@ NanoSim2 | [@nanosim]
 NEAT | [@neat]
 BadRead | [@badread]
 PBSIM | [@pbsim]
-longsiland | [@longsiland]
-In-silico-pcr | [@in-silico-pcr]
+longsiland | [@longislnd]
+_In-silico_-pcr | [@in_silico_pcr]
 Silica | [@silica]
 SWAMPy | [@swampy]
 
@@ -290,16 +288,16 @@ Since the conclusion of the biohackathon, there have been notable advancements i
 
 The primary objective of this project was to identity the opportunities for standardization within the various bioinformatic methods used in WBE. Through our exploration, we have identified several crucial factors in the analysis of wastewater data, spanning from the unique characteristics of the wastewater sample to the interpretation of results, with a significant emphasis on the pivotal role played by analysis workflows and tools. To address these considerations, we have delineated two distinct stages within omic wastewater surveillance workflows and have constructed a comprehensive framework of components (such as modules and tools) that can be effectively harnessed to create end-to-end genomic wastewater surveillance pipelines. These two omic wastewater surveillance workflows can be categorized as follows:
 
-1. Design and in-silico validation of primers and benchmarking bioinformatic pipelines.
+1. Design and _in-silico_ validation of primers and benchmarking bioinformatic pipelines.
 2. Application 
-Specific target analyses, often focused on single viruses and their variants, typically relying on tiling amplicon-based methods.
-b) Analyses of unknown targets using metagenomics and metatranscriptomics approaches.
+  - Specific target analyses, often focused on single viruses and their variants, typically relying on tiling amplicon-based methods.
+  - Analyses of unknown targets using metagenomics and metatranscriptomics approaches.
 
 For each of these stages, we have identified key phases, excluding the sampling and wet-lab portions of the process. In this biohackathon we have demonstrated the advantage of integrated workflows such as V-pipe and the integration of tools into the Galaxy platform. Integrated pipelines/workflows enhance efficiency, reliability, and usability in a domain often fraught with complexities associated with disparate tools and formats. Their capacity to reduce the requirement for specialized knowledge is instrumental in standardizing genomic surveillance practices within public health and scientific research.
 
 Nonetheless, given the diverse array of tools available for processing High-Throughput Sequencing data from wastewater, even within the same phase, there is a critical need for comprehensive bioinformatic benchmarking to compare and contrast the resulting outputs. This need is further underscored by the presence of various methodologies, such as amplicon-based and metagenomics/metatranscriptomics approaches, each with their own specific set of variations from primer choice to rRNA depletion. Furthermore, the outcomes and interpretations of these bioinformatic analyses are highly contingent on the chosen workflow, spanning from the wet-lab to the bioinformatics (dry-lab) stages and the original sample. 
 
-In conclusion, ongoing research efforts, with a specific focus on in-silico validation and the practical implementation of workflows, remain essential in advancing our comprehension of viral presence and distribution within wastewater systems using bioinformatic approaches for virus surveillance.
+In conclusion, ongoing research efforts, with a specific focus on _in-silico_ validation and the practical implementation of workflows, remain essential in advancing our comprehension of viral presence and distribution within wastewater systems using bioinformatic approaches for virus surveillance.
  
 ## Acknowledgements
 
