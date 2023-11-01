@@ -199,6 +199,7 @@ In order to have a better assessment of the landscape, it's important to be awar
 2. Citation of the tool (i.e. papers that have already used the tool)
 
 We identified 12 tools for in-silico validation
+
 Tool name  | Citation
 -------------------|---------------------
 InsilicoSeq | [@insilicoseq]
