@@ -288,8 +288,8 @@ The primary objective of this project was to identity the opportunities for stan
 
 1. Design and _in-silico_ validation of primers and benchmarking bioinformatic pipelines.
 2. Application 
-  1. Specific target analyses, often focused on single viruses and their variants, typically relying on tiling amplicon-based methods.
-  2. Analyses of unknown targets using metagenomics and metatranscriptomics approaches.
+    1. Specific target analyses, often focused on single viruses and their variants, typically relying on tiling amplicon-based methods.
+    2. Analyses of unknown targets using metagenomics and metatranscriptomics approaches.
 
 For each of these stages, we have identified key phases, excluding the sampling and wet-lab portions of the process. In this biohackathon we have demonstrated the advantage of integrated workflows such as V-pipe and the integration of tools into the Galaxy platform. Integrated pipelines/workflows enhance efficiency, reliability, and usability in a domain often fraught with complexities associated with disparate tools and formats. Their capacity to reduce the requirement for specialized knowledge is instrumental in standardizing genomic surveillance practices within public health and scientific research.
 
