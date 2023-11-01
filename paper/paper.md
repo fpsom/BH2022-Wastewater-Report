@@ -266,9 +266,9 @@ In response to the evolving landscape of viral genomic diversity analysis, we ha
 
 ###  Key Components
 
-- **V-pipe:** V-pipe has been a vital resource as part of the SIB Swiss Institute of Bioinformatics (Swiss Elixir Node) since 2017 ([@Fuhrmann2023]). This workflow covers the initial preprocessing steps, encompassing quality control using prinseq, configurable alignment (employing bwa2 for SARS-CoV-2), and mutation identification via pileup generation and results summarization in TSV format.
+- **V-pipe:** V-pipe has been a vital resource as part of the SIB Swiss Institute of Bioinformatics (Swiss Elixir Node) since 2017 [@Fuhrmann2023]. This workflow covers the initial preprocessing steps, encompassing quality control using prinseq, configurable alignment (employing bwa2 for SARS-CoV-2), and mutation identification via pileup generation and results summarization in TSV format.
 
-- **COJAC:** This tool has been instrumental in the early detection of emerging variants, leveraging the co-occurrence of signature mutations. Notably, it played a role in monitoring the spread of the Omicron variant across 450 sites in the UK, as documented in a technical briefing ([@UKHSA-TechnicalBriefing30]).
+- **COJAC:** This tool has been instrumental in the early detection of emerging variants, leveraging the co-occurrence of signature mutations. Notably, it played a role in monitoring the spread of the Omicron variant across 450 sites in the UK, as documented in a technical briefing [@UKHSA-TechnicalBriefing30].
 
 - **LolliPop:** LolliPop is designed for variant deconvolution and the estimation of relative abundances, even in scenarios involving shared mutations among variants and complex sequencing data. It employs a kernel-based deconvolution approach and harnesses time series information in the sample set.
 
@@ -276,7 +276,7 @@ During the recent biohackathon, we seamlessly integrated these wastewater tools 
 
 The newly integrated version of the workflow was officially released as part of Biohackathon 2022 and has already been deployed in Swiss Surveillance. This represents a significant step forward, offering a unified, end-to-end tool for bioinformatics analysis. It replaces the previous approach of running multiple tools as separate manual steps, delivering a clear advantage over independent tools with varying dependencies and environment requirements. The integrated environment enables enhanced version control and standardized surveillance within the framework of public health.
 
-Since the biohackathon, the finalized version has been incorporated into V-pipe version 3.0 and made available to a wider audience. It has already been successfully employed by other similar surveillance projects, demonstrating its utility and effectiveness in the field ([@microorganisms11112660]).
+Since the biohackathon, the finalized version has been incorporated into V-pipe version 3.0 and made available to a wider audience. It has already been successfully employed by other similar surveillance projects, demonstrating its utility and effectiveness in the field [@microorganisms11112660].
 
 ## Galaxy
 
@@ -290,8 +290,8 @@ The primary objective of this project was to identity the opportunities for stan
 
 1. Design and _in-silico_ validation of primers and benchmarking bioinformatic pipelines.
 2. Application 
-  - Specific target analyses, often focused on single viruses and their variants, typically relying on tiling amplicon-based methods.
-  - Analyses of unknown targets using metagenomics and metatranscriptomics approaches.
+  1. Specific target analyses, often focused on single viruses and their variants, typically relying on tiling amplicon-based methods.
+  2. Analyses of unknown targets using metagenomics and metatranscriptomics approaches.
 
 For each of these stages, we have identified key phases, excluding the sampling and wet-lab portions of the process. In this biohackathon we have demonstrated the advantage of integrated workflows such as V-pipe and the integration of tools into the Galaxy platform. Integrated pipelines/workflows enhance efficiency, reliability, and usability in a domain often fraught with complexities associated with disparate tools and formats. Their capacity to reduce the requirement for specialized knowledge is instrumental in standardizing genomic surveillance practices within public health and scientific research.
 
