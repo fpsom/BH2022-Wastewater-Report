@@ -63,11 +63,11 @@ pasting above link (or yours) in
 
 # Introduction
 
-Nearly two years after the first report of SARS-CoV-2 in Wuhan, China, the COVID-19 pandemic has affected more than 485 million people. Wastewater surveillance has attracted extensive public attention during the SARS-CoV-2 pandemic, as a passive monitoring system to complement clinical genomic surveillance activities. Several methods are already in place that effectively facilitate the detection and quantification of viral RNA in wastewater samples, and concentrations in wastewater have been shown to correlate with trends in reported cases.
+Nearly two years after the initial report of SARS-CoV-2 in Wuhan, China, the COVID-19 pandemic has affected over 485 million individuals. Wastewater surveillance has garnered substantial attention as a passive monitoring system to complement clinical genomic surveillance activities during the SARS-CoV-2 pandemic. Several effective methods are now in place for detecting and quantifying viral RNA in wastewater samples, and it is evident that RNA concentrations in wastewater correlate with reported case trends.
 
-With exploratory projects having shown promise, it is now important to coordinate among initiatives to establish standards and build an inventory of the available software tools and services. This effort wil simplify the deployment of end-to-end genomic wastewater surveillance pipelines and increase the adoption of such promising monitoring methods across the wider community. The first step would be to identify and catalogue the relevant methodologies and bioinformatics workflows that are integral components of the lifecycle of genomic data derived from wastewater samples, combining into a coherent structure.
+Exploratory projects have demonstrated the potential of Wastewater Based Epidemiology (WBE), nevertheless it is imperative to coordinate efforts, establish standards, and create a catalog of available software tools and services. This coordination will streamline the deployment of end-to-end genomic wastewater surveillance pipelines and promote the adoption of these monitoring methods within the broader scientific community. The initial step involves identifying and cataloging the challenges of working with wastewater HTS and the pertinent methodologies and bioinformatics workflows essential for managing genomic data from wastewater samples, thus forming a coherent structure.
 
-The main goal of this project has been to review, collate and offer a first attempt towards integrating, standardizing and reporting different approaches that are available for genomic wastewater surveillance. Leveraging the collective expertise of the [ELIXIR Wastewater Surveillance Working Group](https://www.covid19dataportal.org/partners?activeTab=Working%20groups), we focussed on creating a comprehensive landscape of components (e.g. modules, tools etc) that can be effectively utilized for end-to-end genomic wastewater surveillance pipelines.
+The primary objective of this project was to systematically review, compile, and initiate the integration, standardization, and documentation of diverse approaches for genomic wastewater surveillance. Drawing on the expertise of the [ELIXIR Wastewater Surveillance Working Group](https://www.covid19dataportal.org/partners?activeTab=Working%20groups), our focus was to create a comprehensive framework of components, including modules and tools, to facilitate the practical implementation of end-to-end genomic wastewater surveillance pipelines.
 
 <!--
 # Results
@@ -75,62 +75,68 @@ The main goal of this project has been to review, collate and offer a first atte
 
 # Defining the key elements of an omic Wastewater Surveillance framework
 
-One of the first activities of the project was to review and identify the possible questions that an omic Wastewater Surveillance is expected to address, keeping in mind that a key requirement of the system is to produce actionable results, i.e. information that can be directly consumed by public health experts. For example, `VCF` files cannot be considered as actionable, as they require particular expertise to be understood; on the other hand, variant frequencies in a given sample are actionable, as they provide sufficient information to a public health expert to follow up.
+One of the project's initial tasks involved a comprehensive review to identify the pertinent questions that omic Wastewater Surveillance should aim to answer. A fundamental criterion for this system is its ability to generate actionable results, which are insights that can be readily comprehended and utilized by public health experts. To illustrate, `VCF` files, with their specialized content, cannot be categorized as actionable since they necessitate specific expertise for interpretation. In contrast, variant frequencies within a given sample represent actionable data, as they provide public health experts with readily understandable information for further actions and decisions.
 
 An indicative list of these questions are:
 
 1. Is virus `v` present in the wastewater sample?
 
-   Essentially this is a question of presence/absence that is traditionally addressed through RT-qPCR or equivalent methods. However, there are cases (such as the monkeypox virus) that RT-qPCR cannot disambiguate easily, therefore a sequencing step is required for confirmation. 
+Essentially this is a question of presence/absence that is traditionally addressed through RT-qPCR or equivalent methods. 
 
 2. Does the virus ‘v’ vary seasonally? 
 
-For example, many gastrointestinal viruses exhibit a strong seasonal peak during the winter in the northern hemisphere. Conversely, enteroviruses exhibit a strong peak during the summer period. This information can be used to inform public health agencies when specific intervention measures should be implemented. 
+For example, many gastrointestinal viruses exhibit a strong seasonal peak during the winter in the northern hemisphere. Conversely, enteroviruses exhibit a strong peak during the summer period. This information can be used to inform public health authorities when specific intervention measures should be implemented. 
 
 3. Is the variant `vv` present in the wastewater sample?
 
 4. What is the longitudinal change of the variants?
 
-   Essentially this is translated as identifying the trend of variant presence frequencies across multiple time points and samples.
+This question seeks to determine how the frequency of variants changes across different time points and samples.
 
 5. What is the fitness advantage?
 
-   This is one of the more advanced questions that could be addressed by wastewater surveillance, and involves the projection of the trajectory of a given variant in time and the calculation of a possible $R_e$.
+This is one of the more advanced questions that could be addressed by wastewater surveillance, and involves the projection of the trajectory of a given variant in time and the calculation of a possible $R_e$.
 
 6. What are potentially emerging variants?
 
 
 # Standardizing definitions
 
-Looking into viruses in particular, one of the main challenges is still the definition of variants. Typically, a viral Family is approach is taken with direction coming from consortium groups such as the International Committee on Taxonomy of Viruses (ICTV) or sub-specialist groups at genus level. Generally, variants have one to multiple different Single Nucleotide Variations (SNVs) and short Insertion-Deletion mutations (InDels) compared the closest known strain within a viral species. Nevertheless, variant indicates that there are no known phenotypic differences between the closest known strain and the variant. The challenge is defying how many SNVs and InDels result in variant designation, and this has lead to varying definitions and applications of the term. Phenotypic differences result in the designation of new strain.  
+## Variants
+Looking into viruses in particular, one of the main challenges is still the definition of variants. Typically, for each different viral family, a different approach is taken with directions coming from consortium groups such as the International Committee on Taxonomy of Viruses (ICTV) or sub-specialist groups at genus level. Generally, variants have one to multiple different Single Nucleotide Variations (SNVs) and short Insertion-Deletion mutations (InDels) compared to the closest known strain within a viral species. Nevertheless, variant indicates that there are no known phenotypic differences between the closest known strain and the variant. The challenge is in defining how many SNVs and InDels result in variant designation, and this has lead to varying definitions and applications of the term. Phenotypic differences should theoretically result in the designation of new strain.  
 
-Public databases (i.e. public health registries and specialized repositories such as [outbreak.info](https://outbreak.info/)) can be used to monitor variants. Nevertheless, given the multitude of potential variants and respective definitions, more often than not, tools use a custom list of pre-selected definitions (or even simplified versions of the same definitions). However, this approach implies that there is always going to be a human factor in the process, assessing which definitions (or parts of definitions) will be used.
+Public databases (i.e. public health registries and specialized repositories such as [outbreak.info](https://outbreak.info/) or [CovSpectrum](https://cov-spectrum.org/)) can be used to monitor variants for some viruses such as SARS-CoV-2 or Mpox. Nevertheless, given the multitude of potential variants and respective definitions, more often than not, tools use a custom list of pre-selected definitions (or even simplified versions of the same definitions). This approach implies that there is always a human factor in the process, assessing which definitions (or parts of definitions) will be used.
 
-In either case, it is important to identify what would be the minimal information expected as input to a federated omics wastewater surveillance system, i.e. reaching a consensus on how to tackle common definitions (looking also at FAIR definitions.)
+In either case, it is important to identify what would be the minimal information expected as input to a federated omics wastewater surveillance system, i.e. reaching a consensus on how to tackle common definitions, for example FAIR definitions.
 
+## Antimicrobial Resistance
 
-Definition: Antimicrobial Resistance
+Antimicrobial resistance (AMR) is the phenomenon where microbes, either through mutations or the transfer of genes, acquire the capability to withstand the effects of antimicrobial agents that were previously effective in treating them. In simpler terms, AMR is the process by which microbes become resistant to drugs that used to work against them.
 
+Antimicrobial resistance (AMR) in bacteria arises through several mechanisms. Bacteria can naturally develop resistance by accumulating genetic mutations, particularly in the genes encoding the target proteins of antimicrobial agents. These mutations can render the drugs less effective. Additionally, bacteria can share resistance genes through horizontal gene transfer mechanisms such as conjugation, transformation, and transduction, allowing the rapid spread of resistance within bacterial populations. Plasmids, small circular DNA molecules, often carry these resistance genes and can be readily transferred between bacteria. Some bacteria possess efflux pumps that actively expel antimicrobial agents from within the bacterial cell, reducing drug concentrations and efficacy. Bacterial biofilm formation provides a protective matrix that shields bacteria from antimicrobial agents. Enzymatic inactivation, wherein bacteria produce enzymes that degrade antibiotics, is another strategy they employ. Therefore, the challenge within a metagenomics framework is recognizing the potential AMR mechanisms that a genome or assembly could employ to evade antimicrobials, without the complete environmental context. 
 
-Definition: Virulence factor
+Furthermore, presence of specific mutations or plasmids does not infer AMR as it is not always clear from shotgun metagenomics whether those specific regions/genes can be transcribed. Metatranscriptomics can provide a clearer resolution on potential AMR, but the gold standard remains phenotypic assays in the wet-lab. 
 
+## Viral fitness
+Viral fitness is a concept in virology that refers to the ability of a virus to successfully replicate and propagate within a host organism or population of hosts. It encompasses various aspects of a virus's biological characteristics, such as its reproductive rate, transmission potential, and adaptability to changing environments. A virus with high fitness can efficiently reproduce, spread from host to host, and adapt to selective pressures, often resulting in a more successful and prevalent infection. 
+
+Assessing viral fitness through shotgun metagenomics and metatranscriptomics provides valuable insights into the dynamics of viral populations within complex microbial communities. By tracking changes in viral genomic content, such as the accumulation of mutations or the presence of fitness-enhancing mutations, viral fitness can be indirectly inferred. Moreover, metatranscriptomics is particularly well-suited for studying RNA viruses as RNA is the primary target rather than DNA. Once again, the challenge is the definition of what is fitness-enhancing mutations. In order to interpret genomic data for viral-fitness, mutations need to be studied within a wet-lab context and documented within literature. During specific scenarios, such as pandemics or epidemics these wet-lab studies are challenging to conduct within short time-frames and results often lag behind the evolving evolutionary landscape of the virus. Inference through phylogenomics has improved our understanding of which mutations may play a role in viral-fitness but this is a field lacking curated databases for broad annotation of viral genomes. 
 
 # Considerations on Wastewater data analyses
 
-Due to the intrinsic nature of wastewater samples, it is common to have only partial genomic data related to the target organism (i.e., the whole genome sequence of the organism in not available in the data). This prohibits reliable and trustuble lineage identification. In this situation, the detection of specific mutations, with potential impacts on the organism pathogenicity/trasmissibility, could be used as a powerful signal for policy purposes (i.e., identification of relevant Spike variants in SARS-CoV-2).
-In the presence of complete genomic data related to the targeted organism (i.e., the whole genome sequence of the organism is present within the wastewater sample), the process of identify new lineages based on mutation data can be, in principle, achieved from wastewater data. However, this should be strongly discouraged as researchers would need to be extremely confident on the pureness of the original sample (i.e., it do not contains multiple lineages/variants). The ultimate risk would be to create a false lineage, not existing in nature, that would consists of mutations from the different lineages present in the sample. This in turn would be reflected in the lineage databases, with the potential risk of propagating to other studies/analyses with negative effects.
-
+Wastewater data analysis presents unique challenges due to the partial genomic data often found in samples. In many cases, the complete genome sequence of the target organism may not be available, making reliable variant identification challenging. The detection of specific mutations with potential implications for the organism's viral fitness can serve as a valuable signal for public health measures. For instance, it can aid in the identification of significant Spike variants in viruses like SARS-CoV-2. Nevertheless, care should be taken to implement quality control parameters that limit the missed or mis designation of variants i.e. X coverage, quality score cut-offs, contig length, N repeated detection. Specialised tools for variant designation and lineage assignment should be used for highly fragmented data from wastewater, water or food samples. 
 
 # Omic Wastewater Surveillance
 
-We identify three stages of omic Wastewater Surveillance workflows; thought they are not necessarily concurrent:
+We identify two stages of omic Wastewater Surveillance workflows; with stage two consisting of two approaches:
 
 - Design and in-silico validation of primers and/or benchmarking bioinformatic pipelines
-- specific target (e.g. single virus and variants), typically amplicon based, and
+- Real world application
+-  specific target (e.g. single virus and variants), typically amplicon based, and
 -  unknown target metagenomics / metatranscriptomics
-	- Shotgun metagenomics or metratranscriptomics can include virus enrichment or       host depletion steps prior to High Throughput Sequencing
+		- Shotgun metagenomics or metratranscriptomics can include virus enrichment or       host depletion steps prior to High Throughput Sequencing
 
-For each of these workflows, we have identified the key phases involved (not including the sampling and wet-lab partis of the process).
+For each of these stages and approaches, we have identified the key phases involved (not including the sampling and wet-lab partis of the process).
 
 ## In-silico validation
 Slightly different approaches are required for in-silico validation for targeted and non-targeted approaches. These are clearly outlined in two separate tables, whilst the final table in this section contains the relevant steps that are common to both approaches. 
@@ -165,11 +171,11 @@ Nb | Step |	Objective | Actionable
 1 | Sequencing | Produce raw reads data in `FASTQ`/`FAST5` format | No
 2 | Quality control step | trimming/reads quality assesment | No
 3 | Alignment to reference (incl. host removal and cleaning) | `BAM` file | No 
-4 | Identify mutations | `VCF` files, list of mutations, pileups, etc | Yes 
+4 | Identify mutations | `VCF` files, list of mutations, pileups, etc | No 
 5 | Detect variants based on definitions | List of variants | Yes (variant level)
 6 | Quantify variants based on definitions | List of variants with frequencies (should add up to 100% per sample) | Yes (variant trends)
 7 | Define new variants based on mutations | List of mutations not mapping to known definitions | Yes (emerging variants)
-8 | Clinically relevant mutation | Interpret mutations from VCF | Tracking of clinically relevent mutations, independent of variant designation - e.g. antibody evasion, drug resistance | Yes
+8 | Clinically relevant mutation | Interpret mutations from VCF | Tracking of clinically relevent mutations, independent of variant designation - e.g. antibody evasion, drug resistance | Yes (prevalence of virulence factors)
 
 ## Unknown target meta-genomics / -transcriptomics workflow
 
@@ -192,103 +198,111 @@ In order to have a better assessment of the landscape, it's important to be awar
 1. Tool/Workflow name
 2. Citation of the tool (i.e. papers that have already used the tool)
 
-We identified 11 tools for in-silico validation.
-
+We identified 12 tools for in-silico validation
 Tool name  | Citation
 -------------------|---------------------
-InsilicoSeq | https://github.com/HadrienG/InSilicoSeq
-ART | https://www.niehs.nih.gov/research/resources/software/biostatistics/art/index.cfm
-BEAR | https://github.com/sej917/BEAR
-Grinder | https://github.com/zyxue/biogrinder
-NanoSim2 | https://github.com/bcgsc/NanoSim
-BadRead | https://github.com/rrwick/Badread
-PBSIM | https://github.com/pfaucon/PBSIM-PacBio-Simulator
-longsiland | https://github.com/bioinform/longislnd
-In-silico-pcr | https://github.com/egonozer/in_silico_pcr
-Silica | https://github.com/gear-genomics/silica
-Yardstick | https://yardstick.tidymodels.org/
+InsilicoSeq | [@insilicoseq]
+ART | [@art]
+BEAR | [@bear]
+Grinder | [@grinder]
+NanoSim2 | [@nanosim]
+NEAT | [@neat]
+BadRead | [@badread]
+PBSIM | [@pbsim]
+longsiland | [@longsiland]
+In-silico-pcr | [@in-silico-pcr]
+Silica | [@silica]
+SWAMPy | [@swampy]
 
 We identified 36 tools/workflow for bioinformatic processing and analysis of HTS data from wastewater
 
-Tool/Workflow name  | Citation
--------------------|---------------------
-Freyja |  [@Karthikeyan2022], [@SolisMoreira2022], [@Karthikeyan2021], [Center for Food Safety and Applied Nutrition."Wastewater Surveillance for SARS-CoV-2 Variants". FDA (Jan. 2022)](https://www.fda.gov/food/whole-genome-sequencing-wgs-program/wastewater-surveillance-sars-cov-2-variants)
-COJAC | [@Jahn2022]
-LolliPop  | [@Dreifuss2022]
-LCS | [@Valieris2022], [@Karthikeyan2022]
-Kallisto |  [@Baaijens2021], [Matei Anton, "Kallisto Repurposed: Using sequencing reads from the spike, nucleocapsid, and a middle region of nsp3 in the kallisto pipeline to better predict SARS-CoV-2 variants in wastewater", 2022](https://repository.tudelft.nl/islandora/object/uuid%3A990e42c3-e79f-4ff9-85ffa614554269bb) 
-Alcov | [@Ellmen2021]
-SAM refiner |    [@Gregory2021],[@Gregory2022],[@Yaglom2022]
-Pipes et al. |    [@Pipes2022]
-Gromstole |   https://github.com/PoonLab/gromstole
-AG |    [@NGuessan2022]
-Lineagespot  |    [@Pechlivanis2022]
-PiGx  |    [@Schumann2021]
-Izquierdo-Lara et al.  |    [@IzquierdoLara2021] 
-Galaxy wastewater amplicon workflow |   
-Kraken | 
-Kraken2 | https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1891-0
-KRONA |   https://github.com/marbl/Krona
-Abricate |  https://github.com/tseemann/abricate
-staramr |  https://github.com/phac-nml/staramr 
-Mykrobe |    https://github.com/Mykrobe-tools/mykrobe
-Pathofact | https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-020-00993-9
-ariba |   https://github.com/sanger-pathogens/ariba
-Hostile | https://github.com/bede/hostile
-Virstrain | https://genomebiology.biomedcentral.com/articles/10.1186/s13059-022-02609-x|
-ViralClust | https://github.com/klamkiew/viralclust
-VIRify | https://github.com/EBI-Metagenomics/emg-viral-pipeline
-DeepVirFinder | https://github.com/jessieren/DeepVirFinder
-Virulign | https://github.com/rega-cev/virulign
-Palmscan | https://github.com/rcedgar/palmscan
-coronaSPades | https://academic.oup.com/bioinformatics/article/38/1/1/6354349
-viralrecon | https://github.com/nf-core/viralrecon
-Viral-ngs | https://viral-ngs.readthedocs.io/en/latest/
-ViralMSA | https://github.com/niemasd/ViralMSA
-VirSorter2 | https://github.com/jiarong/VirSorter2
-ViralFlye | https://github.com/Dmitry-Antipov/viralFlye
-CheckV | https://bitbucket.org/berkeleylab/CheckV
+Here's the table reordered by action category:
+
+Tool/Workflow name  | Action |  Citation
+-------------------|-----------\-----------------
+Hostile | Host removal | [@hostile]
+viralrecon | Workflow for assembly and variant detection | [@viralrecon]
+Viral-ngs | Workflow for assembly and taxonomic classification |[@viral-ngs]
+VIRify | Detection, annotation, and taxonomic classification | [@virify]
+Galaxy wastewater amplicon workflow | 
+Wastewater_surveillance_pipeline |  Variant composition &  lineage assignment | [@NGuessan2022]
+coronaSPades | Virus assembler |[@coronaspades]
+Kraken | taxonomic classification | [@kraken]
+Kraken2 | taxonomic classification | [@kraken2]
+VirSorter2 | taxonomic classification | [@virsorter]
+KRONA |  taxonomic visulisation | [@krona]
+Abricate | AMR or virulence gene prediction | [@abricate]
+staramr | AMR prediction | [@staramr]
+Mykrobe | AMR prediction & phylogenetics |[@mykrobe]
+Pathofact | AMR or virulence gene prediction | [@pathofact]
+ariba | AMR prediction and MLST typing | [@ariba]
+ViralClust | Virus specific clustering | [@viralclust]
+ViralMSA | Multiple sequence alignment | [@viralmsa]
+DeepVirFinder | Virus detection |[@deepvirfinder]
+Virulign | Codon-correct pairwise alignments | [@virulign]
+Palmscan | Virus detection and taxonomic classification | [@palmscan]
+SAM refiner |  Variant extraction |  [@Gregory2021],[@Gregory2022],[@Yaglom2022]
+Virstrain | Variant detection | [@virstrain]
+COJAC | Variant detection | [@Jahn2022]
+Lineagespot  |  Variant composition &  lineage assignment | [@Pechlivanis2022]
+Alcov | Variant composition | [@Ellmen2021]
+Gromstole | Variant composition |  https://github.com/PoonLab/gromstole
+LolliPop  | Variant Visualization | [@Dreifuss2022]
+Freyja  |   Lineage assignment  | [@Karthikeyan2022]
+LCS | Lineage composition | [@Valieris2022], [@Karthikeyan2022]
+Kallisto | Fast pseudoalignment quantification | [@Baaijens2021]
+ViralFlye | long-read Metagenome Assmebled Viruses (MAVs)| [@viralflye]
+CheckV | Quality control of MAVs | [@checkv]
 
 
 # Use-case
 
-## V-pipe
+Integrated workflows or pipelines offer a streamlined and cohesive approach to data analysis, enhancing the efficiency and reliability of the entire process, in contrast to the fragmented nature of working with independent tools. The advantage of integrated workflows lies in their ability to seamlessly connect different stages of analysis, ensuring data consistency and reducing the risk of errors or data loss that can occur when manually transferring data between separate tools. In contrast, relying on independent tools often involves intricate data handling and increased risk of compatibility issues, which can lead to time-consuming and error-prone tasks in data management and analysis. Integrated workflows address these challenges, providing a more robust and efficient solution for complex data processing and analysis tasks. Furthermore, this reduces the specialist knowledge required to run specific bioinformatics pipelines, a important component for standardised, accredited WBE or genomic surveillance in general. 
 
+We have demonstrated two case studies of integrated pipelines below relevant to viral surveillance within a WBE context. 
 
-Building on the above survey of the landscape, we have integrated tools into an end-to-end workflow that is published on Elixir’s WorkflowHub platform. This was accomplilshed by combining the following tools:
+## V-pipe: A Comprehensive Bioinformatics Workflow
 
-V-pipe is a bioinformatics workflow for the analysis of sequencing data of viral
-samples exhibiting genomic diversity, either within hosts in clinical samples or
-among hosts in environmental samples. It has been an SIB Software Resource
-since 2017.
+In response to the evolving landscape of viral genomic diversity analysis, we have developed an end-to-end bioinformatics workflow, V-pipe, now hosted on Elixir's WorkflowHub platform. This integration brings together essential components for the analysis of sequencing data derived from viral samples, whether they exhibit genomic diversity within clinical hosts or across hosts in environmental samples.
 
+###  Key Components
+
+- **V-pipe:** V-pipe has been a vital resource as part of the SIB Swiss Institute of Bioinformatics (Swiss Elixir Node) since 2017 ([@Fuhrmann2023]). This workflow covers the initial preprocessing steps, encompassing quality control using prinseq, configurable alignment (employing bwa2 for SARS-CoV-2), and mutation identification via pileup generation and results summarization in TSV format.
+
+- **COJAC:** This tool has been instrumental in the early detection of emerging variants, leveraging the co-occurrence of signature mutations. Notably, it played a role in monitoring the spread of the Omicron variant across 450 sites in the UK, as documented in a technical briefing ([@UKHSA-TechnicalBriefing30]).
+
+- **LolliPop:** LolliPop is designed for variant deconvolution and the estimation of relative abundances, even in scenarios involving shared mutations among variants and complex sequencing data. It employs a kernel-based deconvolution approach and harnesses time series information in the sample set.
+
+During the recent biohackathon, we seamlessly integrated these wastewater tools into V-pipe, incorporating them as additional analysis steps. The real-world data from the Swiss variant surveillance program in wastewater was used to refine and optimize parameterization, ensuring the prototype's stability.
+
+The newly integrated version of the workflow was officially released as part of Biohackathon 2022 and has already been deployed in Swiss Surveillance. This represents a significant step forward, offering a unified, end-to-end tool for bioinformatics analysis. It replaces the previous approach of running multiple tools as separate manual steps, delivering a clear advantage over independent tools with varying dependencies and environment requirements. The integrated environment enables enhanced version control and standardized surveillance within the framework of public health.
+
+Since the biohackathon, the finalized version has been incorporated into V-pipe version 3.0 and made available to a wider audience. It has already been successfully employed by other similar surveillance projects, demonstrating its utility and effectiveness in the field ([@microorganisms11112660]).
 
 ## Galaxy
 
+During the biohackathon, we engaged in productive discussions with researchers working on the Galaxy platform, exploring ways to make various analytical tools available within Galaxy's ecosystem.
 
-[JBC and Defra "Wastewater monitoring of SARS-CoV-2 variants in England: demonstration case study for Bristol (December 2020 to March 2021), 8 April 2021](https://www.gov.uk/government/publications/jbc-and-defra-wastewater-monitoring-of-sars-cov-2-variants-in-england-demonstration-case-study-for-bristol-december-2020-to-march-2021-8-april-20)
+Since the conclusion of the biohackathon, there have been notable advancements in the integration of wastewater analysis tools into the Galaxy platform. Notably, tools such as COJAC are now accessible via a visual, user-friendly point-and-click interface on Galaxy (accessible at COJAC on Galaxy [https://usegalaxy.eu/root?tool_id=cooc_mutbamscan]). This integration enhances the accessibility of these tools, providing users with a seamless experience while also enabling their incorporation into comprehensive Galaxy workflows.
 
->> Building on this landscape, this project will attempt a first integration of selected modules within the ELIXIR Tools Platform ecosystem (Galaxy, bio.tools, WorkflowHub etc).
 # Discussion
 
-The main goal of this project was to integrate, standardize and report the different approaches available for genomic wastewater surveillance. With our exploration, we highlighted several aspects that, to us, are critical while analysing wastewater data. These aspects range from the intrinsic nature of the wastewater specimen till the interpretation of the results, with analyses workflows and tools displaying a pivotal role. To tackle these features, we identified three stages of omic Wastewater Surveillance workflows and created a comprehensive landscape of components (e.g. modules, tools, etc) that can be effectively utilized for end-to-end genomic wastewater surveillance pipelines. The three omic Wastewater surveillance workflows can be divided into:
+The primary objective of this project was to identity the opportunities for standardization within the various bioinformatic methods used in WBE. Through our exploration, we have identified several crucial factors in the analysis of wastewater data, spanning from the unique characteristics of the wastewater sample to the interpretation of results, with a significant emphasis on the pivotal role played by analysis workflows and tools. To address these considerations, we have delineated two distinct stages within omic wastewater surveillance workflows and have constructed a comprehensive framework of components (such as modules and tools) that can be effectively harnessed to create end-to-end genomic wastewater surveillance pipelines. These two omic wastewater surveillance workflows can be categorized as follows:
 
-- Design and in-silico validation of primers and/or benchmarking bioinformatic pipelines.
-- Specific target analyses(e.g. single virus and variants), typically amplicon based.
-- Unknown target metagenomics / metatranscriptomics analyses
+1. Design and in-silico validation of primers and benchmarking bioinformatic pipelines.
+2. Application 
+Specific target analyses, often focused on single viruses and their variants, typically relying on tiling amplicon-based methods.
+b) Analyses of unknown targets using metagenomics and metatranscriptomics approaches.
 
-For each of these workflows, we have identified the key phases involved (not including the sampling and wet-lab partis of the process). As several different tools can be selected to process High-Throughput Sequencing data from wastewater (even for the same phase), a comprehensive bioinformatic benchmarking is required to compare and contrast the resulting outputs. This requirement is only exacerbated by the presence of different methodologies, like the amplicon-based and metagenomics/metatranscriptomics approaches.
+For each of these stages, we have identified key phases, excluding the sampling and wet-lab portions of the process. In this biohackathon we have demonstrated the advantage of integrated workflows such as V-pipe and the integration of tools into the Galaxy platform. Integrated pipelines/workflows enhance efficiency, reliability, and usability in a domain often fraught with complexities associated with disparate tools and formats. Their capacity to reduce the requirement for specialized knowledge is instrumental in standardizing genomic surveillance practices within public health and scientific research.
 
-It must be taken into consideration that the outcome and the interpretation of the analyses is heavily dependent on the workflow applied from wet-lab through to bioinformatics (dry-lba approaches) and on the original sample. For instance, lineage assignation steps can be considered reliable and trustable only when the complete target organism genome can be found in the wastewater sample.   
+Nonetheless, given the diverse array of tools available for processing High-Throughput Sequencing data from wastewater, even within the same phase, there is a critical need for comprehensive bioinformatic benchmarking to compare and contrast the resulting outputs. This need is further underscored by the presence of various methodologies, such as amplicon-based and metagenomics/metatranscriptomics approaches, each with their own specific set of variations from primer choice to rRNA depletion. Furthermore, the outcomes and interpretations of these bioinformatic analyses are highly contingent on the chosen workflow, spanning from the wet-lab to the bioinformatics (dry-lab) stages and the original sample. 
 
-
-
-It is important to exercise caution in the interpretation of the output data. Output data is heavily dependent on the workflow applied from wet-lab through to bioinformatic (dry-lab approaches). 
-There are a variety of tools/workflows available for bioinformatics processing of High Throughput Sequencing data from wastewater. A comprehensive bioinformatic benchmarking is required to compare and contrast both tools and approaches for targeted and non-targeted HTS approaches. 
-Wastewater based epidemiology is a powerful tool for public health as demonstrated in the use-case. In order to apply it broadly for viral surveillance, minimum information for reporting of WPE results i.e MIWPE should be established. 
+In conclusion, ongoing research efforts, with a specific focus on in-silico validation and the practical implementation of workflows, remain essential in advancing our comprehension of viral presence and distribution within wastewater systems using bioinformatic approaches for virus surveillance.
  
 ## Acknowledgements
 
 Some of the authors were funded by ELIXIR, the research infrastructure for life-science data, to join the BioHackathon Europe.
 
 ## References
+
