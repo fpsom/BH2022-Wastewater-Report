@@ -272,8 +272,6 @@ In response to the evolving landscape of viral genomic diversity analysis, we ha
 
 - **LolliPop:** LolliPop is designed for variant deconvolution and the estimation of relative abundances, even in scenarios involving shared mutations among variants and complex sequencing data. It employs a kernel-based deconvolution approach and harnesses time series information in the sample set.
 
-During the recent biohackathon, we seamlessly integrated these wastewater tools into V-pipe, incorporating them as additional analysis steps. The real-world data from the Swiss variant surveillance program in wastewater was used to refine and optimize parameterization, ensuring the prototype's stability.
-
 The newly integrated version of the workflow was officially released as part of Biohackathon 2022 and has already been deployed in Swiss Surveillance. This represents a significant step forward, offering a unified, end-to-end tool for bioinformatics analysis. It replaces the previous approach of running multiple tools as separate manual steps, delivering a clear advantage over independent tools with varying dependencies and environment requirements. The integrated environment enables enhanced version control and standardized surveillance within the framework of public health.
 
 Since the biohackathon, the finalized version has been incorporated into V-pipe version 3.0 and made available to a wider audience. It has already been successfully employed by other similar surveillance projects, demonstrating its utility and effectiveness in the field [@microorganisms11112660].
