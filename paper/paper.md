@@ -267,17 +267,17 @@ In response to the evolving landscape of viral genomic diversity analysis, we ha
 ###  Key Components
 
 - **V-pipe**: An Integrated Bioinformatics Workflow
-V-pipe is an integrated bioinformatics workflow designed to address the evolving challenges in the analysis of viral genomic diversity. It has been a pivotal resource within the SIB Swiss Institute of Bioinformatics (Swiss Elixir Node) since 2017 [@Fuhrmann2023]. V-pipe covers the initial preprocessing steps, including quality control using prinseq, configurable alignment employing bwa2 for SARS-CoV-2, and mutation identification via pileup generation and results summarization in TSV format.
+V-pipe is an integrated bioinformatics workflow designed to address the evolving challenges in the analysis of viral genomic diversity. It has been a pivotal resource within the SIB Swiss Institute of Bioinformatics (Swiss Elixir Node) since 2017[@cespedes2021]. V-pipe covers the initial preprocessing steps, including quality control using prinseq, configurable alignment employing bwa2 for SARS-CoV-2, and mutation identification via pileup generation and results summarization in TSV format.
 
 - **COJAC**: Early Detection of Emerging Variants
 COJAC is a crucial tool for the early detection of emerging variants, particularly useful for monitoring the spread of viral variants. It leverages the co-occurrence of signature mutations and has been instrumental in tracking the Omicron variant's distribution across 450 sites in the UK, as documented in a technical briefing [@UKHSA-TechnicalBriefing30].
 
--**LolliPop**: Variant Deconvolution and Relative Abundance Estimation
+- **LolliPop**: Variant Deconvolution and Relative Abundance Estimation
 LolliPop is specifically developed for variant deconvolution and the estimation of relative abundances, even when dealing with shared mutations among variants and complex sequencing data. It utilizes a kernel-based deconvolution approach and capitalizes on time series information in the sample set.
 
-These three key components were seamlessly integrated during a recent biohackathon, with real-world data from the Swiss variant surveillance program in wastewater serving as a benchmark for parameterization and prototype stability. The result is an integrated, end-to-end workflow that simplifies bioinformatics analysis, replacing the need for multiple manual steps and varying tool dependencies. This integrated environment enhances version control and standardization, catering to the needs of public health surveillance.
+These three key components were seamlessly integrated during a recent biohackathon, with real-world data from the Swiss variant surveillance program in wastewater serving as a benchmark for parameterization and prototype stability. The result is an integrated, end-to-end workflow that simplifies bioinformatics analysis, replacing the need for multiple manual steps and varying tool dependencies. This integrated environment enhances version control and standardization, catering to the needs of public health surveillance. The Swiss variant surveillance was updated to leverage this workflow.
 
-Since its introduction at the Biohackathon 2022, the finalized version of V-pipe, incorporated into V-pipe version 3.0, has been made accessible to a wider audience and has been successfully adopted by similar surveillance projects, underlining its value and effectiveness in the field [@microorganisms11112660].
+Since its introduction at the Biohackathon 2022, the finalized version of this integrated wastewater workflow, incorporated into V-pipe version 3.0 [@Fuhrmann2023], has been made accessible to a wider audience and has been successfully adopted by similar surveillance projects, underlining its value and effectiveness in the field [@microorganisms11112660].
 
 ## Galaxy
 
